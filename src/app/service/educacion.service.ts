@@ -9,11 +9,11 @@ import { Educacion } from '../components/educacion/educacion';
 })
 export class EducacionService {
 
-  private apiServerUrl = environment.apiBaseUrl;
+  private apiServerUrl = '';
 
   constructor(private http:HttpClient) { }
 
-  public getEmployees(): Observable<Educacion[]> {
+  public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.apiServerUrl}/employee/all`);
   }
 
