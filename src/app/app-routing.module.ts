@@ -8,7 +8,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsComponent } from './components/skills/skills.component';
 
 const routes: Routes = [
-{path: 'header', component: HeaderComponent},
+{path: ' ', component: HeaderComponent},
 {path: 'persona', component: PersonaComponent},
 {path: 'skills', component: SkillsComponent},
 {path: 'proyectos', component: ProyectosComponent},
