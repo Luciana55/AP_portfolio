@@ -1,6 +1,6 @@
 import { Persona } from "../persona/persona";
 
-export interface ExpLaboral {
+export interface Experiencia {
     id: number;
     posicion: string;
     nombreEmpresa: string;
