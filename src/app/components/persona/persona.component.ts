@@ -9,7 +9,7 @@ import { Persona } from './persona';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent implements OnInit {
-  public persona: Persona [] = [];
+  public persona: Persona[] = [];
   public editPersona: Persona | undefined;
   public deletePersona: Persona | undefined;
   
@@ -23,13 +23,17 @@ export class PersonaComponent implements OnInit {
   }
 
   public getPersona(): void {
-    this.personaService.getPersona().subscribe(
-    (response: Persona []) =>{
-      this.persona= response;
+    this.personaService.getPersona().subscribe({
+    next: (response: Persona[]) => {
+      this.persona = response;
     },
-    (error:HttpErrorResponse) => {
+    error:(error:HttpErrorResponse)=> {
       alert(error.message);
     }
-    );
+  })
   }
+
+
+
+
 }
