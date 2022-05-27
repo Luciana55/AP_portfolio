@@ -1,10 +1,9 @@
-import { Persona } from "../persona/persona";
 
-export interface Proyecto {
+export interface Proyectos {
     id: number;
     nombreProyecto: string;
     descripcion: string;
+    fecha: string;
     urlImagen: string;
     urlSitio: string;
-    persona: Persona;
-}
+  }

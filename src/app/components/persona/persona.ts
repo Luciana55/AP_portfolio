@@ -6,6 +6,7 @@ export interface Persona {
     ocupacion: string;
     telefono: string;
     email: string;
+    ubicacion: string;
     sobremi: string;
     urlImagen: string;
 

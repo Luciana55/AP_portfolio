@@ -1,4 +1,3 @@
-import { Persona } from "../persona/persona";
 
 export interface Experiencia {
     id: number;
@@ -7,5 +6,4 @@ export interface Experiencia {
     fechaInicio: string;
     fechaFin: string;
     descripcion: string;
-    persona: Persona,
 }

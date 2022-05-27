@@ -1,4 +1,3 @@
-import { Persona } from "../persona/persona";
 
 export interface Educacion{
     id:number,
@@ -7,5 +6,4 @@ export interface Educacion{
     fechaInicio:string,
     fechaFin:string,
     url_foto:string,
-    persona: Persona,
 }
