@@ -1,25 +1,20 @@
-<section class="py-5 d-flex align-items-center" id="one">
-
-    <div class="col-lg-12">
-        <div class="card text-center">
-            <button type="button" class="btn btn-success" (click)="onOpenModal(null, 'add')">
-                <a class="nav-link" style="color:aliceblue">
-                añadir persona <span class="sr-only">(current)</span></a>
-            </button>            
+    <div class="col-lg-12" class="main-container">
+        <div class="card text-center" *ngFor="let persona of persona">                  
                 <div class="float-right btn-group btn-group-sm">             
                 </div>             
-            <div class="card-body info-card social-about">                
-                <h2 class="text-blue">Acerca de</h2>
+            <div class="card-body info-card social-about"> 
+                <a (click)="onOpenModal(persona, 'edit')"class="btn btn-primary tooltips float-right" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                <a (click)="onOpenModal(persona, 'delete')" class="btn btn-secondary tooltips float-right" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>               
+                             
                 <h4><strong>About Me</strong></h4>                
-                <p *ngFor="let persona of persona">{{persona.sobremi}} </p>
-                <a (click)="onOpenModal(null, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                    <a (click)="onOpenModal(null, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                <p>{{persona.sobremi}} </p>
+                
                 <h4 class="mb-3"><strong>Personal Info</strong></h4>
                 <div class="row">
                     <div class="col-6">
                         <div class="social-info">
                             <i class="fas fa-birthday-cake mr-2"></i>
-                            <span *ngFor="let persona of persona">15/08/1991</span>
+                            <span >15/08/1991</span>
                         </div>
                     </div>
                     
@@ -27,7 +22,7 @@
                         <div class="social-info">
                             <i class="fas fa-map-marker-alt mr-2"></i>
                                                                             
-                            <span *ngFor="let persona of persona">{{persona.ubicacion}}</span>
+                            <span>{{persona.ubicacion}}</span>
                         
                         </div>
                         </div>
@@ -43,7 +38,7 @@
                     <div class="col-6">
                         <div class="social-info">
                             <i class="fas fa-briefcase mr-2"></i>
-                            <span *ngFor="let persona of persona">{{persona.ubicacion}}</span>
+                            <span>{{persona.ubicacion}}</span>
                         </div>
                     </div>
                 </div>
@@ -51,13 +46,13 @@
                     <div class="col-6">
                         <div class="social-info">
                             <i class="fas fas fa-mobile mr-2"></i>
-                            <span *ngFor="let persona of persona">{{persona.telefono}}</span>
+                            <span>{{persona.telefono}}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="social-info">
                             <i class="fas fas fa-envelope mr-2"></i>
-                            <span *ngFor="let persona of persona">{{persona.email}}</span>
+                            <span>{{persona.email}}</span>
                         </div>
                     </div>
                 </div>

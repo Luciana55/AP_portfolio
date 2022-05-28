@@ -1,93 +1,37 @@
-<section class="py-5 d-flex align-items-center" id="two">
-<div class="col-lg-12">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="col-lg-12" class="main-container">
+  
     <div class="resume-experience">
-<div class="timeline-box">
-    <h5 class="resume-experience-title">Education:</h5>
-    <div class="jobster-candidate-timeline">
+   <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nueva educación</button>
+<div class="timeline-box mt-4">
+   <h5 class="resume-experience-title">Educación:</h5>
+
+    <div class="jobster-candidate-timeline" *ngFor="let educacion of educacion">
       <div class="jobster-timeline-item">
         <div class="jobster-timeline-cricle">
           <i class="far fa-circle"></i>
         </div>
         <div class="jobster-timeline-info">
           <div class="dashboard-timeline-info">
-            <span class="jobster-timeline-time">2014 - 2018</span>
-            <h6 class="mb-2">Diploma in Graphics Design</h6>
-            <span *ngFor="let educacion of educacion">{{educacion.titulo}}</span>
-            <p class="mt-2">Have some fun and hypnotize yourself to be your very own “Ghost of Christmas future” and see what the future holds for you.</p>
+            <span class="jobster-timeline-time">{{educacion.fechaInicio}} {{educacion.fechaFin}}</span>
+            <h6 class="mb-2">{{educacion.nombreInstituto}}</h6>
+            <span>{{educacion.titulo}}</span>
+            <p>-----------------------</p>
+            <img class="prog-avatar" src="" alt="Foto">
           </div>
         </div>
       </div>
-      <div class="jobster-timeline-item mb-0">
-        <div class="jobster-timeline-cricle">
-          <i class="far fa-circle"></i>
-        </div>
-        <div class="jobster-timeline-info">
-          <div class="dashboard-timeline-info">
-            <span class="jobster-timeline-time">2018 - Pres</span>
-            <h6 class="mb-2">Masters in Software Engineering</h6>
-            <span>- Engineering University</span>
-            <p class="mt-2">jjhhgghghghg</p>
-          </div>
-
+         <div class="float-right btn-group btn-group-sm">
+          <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+          <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+      </div>
         </div>
       </div>
-    </div>
-</div>
-</div>
-</div>
-</section>
+      </div>
+      </div>
 
-<!--Div de ejemplo para models-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style="color:white;">Employee Manager</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarColor02">
-     <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-           <a class="nav-link" (click)="onOpenModal(null, 'add')">Add Employee <span class="sr-only">(current)</span></a>
-        </li>
-       
-     </ul>
-<!--     <form class="form-inline my-2 my-lg-0">
-        <input type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
-         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
-     </form> -->
-  </div>
-</nav>
-<!-- prueba de models-->
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<div class="container" id="main-container">
-    <div class="row">
-        <div *ngFor="let educacion of educacion" class="col-md-6 col-xl-3">
-            <div class="card m-b-30"><!---->
-                <div class="card-body row">
-                    <div class="col-6">
-                        <a href=""><img src="{{educacion.url_foto}}" alt="" class="img-fluid rounded-circle w-60"></a>
-                    </div>
-                    <div class="col-6 card-title align-self-center mb-0">
-                        <h5>{{educacion.nombreInstituto}}</h5>
-                        <p class="m-0">{{educacion.titulo}}</p>
-                    </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
-                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
-                </ul>
-                <div class="card-body">
-                    <div class="float-right btn-group btn-group-sm">
-                        <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                        <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-      
 
         <!-- Add Modal -->
         <div class="modal fade" id="addEducacionModal" tabindex="-1" role="dialog" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
@@ -145,7 +89,7 @@
                    <form #editForm="ngForm">
                       <div class="form-group">
                          <label for="name">Nombre</label>
-                         <input type="text" ngModel="{{editEducacion?.nombreInstituto}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
+                         <input type="text" ngModel="{{editEducacion?.nombreInstituto}}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
                       </div>
                       <input type="hidden" ngModel="{{editEducacion?.id}}" name="id" class="form-control" id="id" placeholder="id">
                       <input type="hidden" ngModel="{{editEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" placeholder="titulo">
@@ -176,16 +120,16 @@
           <div class="modal-dialog" role="document">
              <div class="modal-content">
                 <div class="modal-header">
-                   <h5 class="modal-title" id="deleteModelLabel">Delete Educacion</h5>
+                   <h5 class="modal-title" id="deleteModelLabel">Eliminar Educacion</h5>
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                    </button>
                 </div>
                 <div class="modal-body">
-                   <p>Are you sure you want to delete employee {{deleteEducacion?.nombreInstituto}}?</p>
+                   <p>Seguro que quiere eliminar: {{deleteEducacion?.nombreInstituto}}?</p>
                    <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                      <button (click)="onDeleteEducacion(deleteEducacion?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                      <button (click)="onDeleteEducacion(deleteEducacion?.id)" class="btn btn-danger" data-dismiss="modal">Sí</button>
                    </div>
                 </div> 
              </div>
@@ -193,10 +137,12 @@
         </div>
         
         
-        <!-- Notification for no employees -->
+        <!-- Notificación si no hay estudios -->
         <div *ngIf="educacion?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
         <div class="alert alert-info" role="alert">
-          <h4 class="alert-heading">NO EMPLOYEES!</h4>
-          <p>No Employees were found.</p>
+          <h4 class="alert-heading">Error!</h4>
+          <p>No se encontraron estudios.</p>
         </div>
         </div>
+
+     

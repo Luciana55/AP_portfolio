@@ -1,43 +1,3 @@
-/* My Resume */
-.profile {
-    margin-bottom: 25px;
-}
-.profile .jobster-user-info {
-    display: inline-block;
-    width: 100%;
-}
-.profile .jobster-user-info .profile-avatar {
-    position: relative;
-    height: 115px;
-    width: 115px;
-    border-radius: 100%;
-    display: inline-block;
-}
-.profile .jobster-user-info .profile-avatar img {
-    border-radius: 100%;
-}
-.profile .jobster-user-info .profile-avatar i {
-    font-size: 16px;
-    color: #21c87a;
-    position: absolute;
-    background: #ffffff;
-    border-radius: 100%;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    text-align: center;
-    bottom: 20px;
-    right: -5px;
-}
-
-.about-candidate {
-    padding: 25px 0px;
-}
-.about-candidate .candidate-info {
-    margin-bottom: 20px;
-}
-
 .resume-experience {
     padding-left: 100px;
     padding-top: 60px;
@@ -61,10 +21,6 @@
     border-color: #f6f6f6;
 }
 
-.user-dashboard-info-box .select2-container--default .select2-selection--single .select2-selection__rendered {
-    font-weight: bold;
-    color: #626262;
-}
 
 @media (max-width: 1199px) {
     .secondary-menu ul li a {
@@ -92,37 +48,6 @@
         padding: 4px 8px;
     }
 }
-
-/*****************************
-    Progress Bar
-*****************************/
-.progress {
-    position: relative;
-    overflow: inherit;
-    height: 3px;
-    margin: 40px 0px 15px;
-    width: 100%;
-    display: inline-block;
-}
-.progress .progress-bar {
-    height: 3px;
-    background: #21c87a;
-}
-.progress .progress-bar-title {
-    position: absolute;
-    left: 0;
-    top: -20px;
-    color: #212529;
-    font-size: 14px;
-    font-weight: 600;
-}
-.progress .progress-bar-number {
-    position: absolute;
-    right: 0;
-    color: #646f79;
-    top: -20px;
-}
-
 
 /* Jobster Candidate */
 .jobster-candidate-timeline {
@@ -209,4 +134,7 @@
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 16px;
+}
+a {
+    color: #000000;
 }
