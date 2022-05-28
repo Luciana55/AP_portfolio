@@ -9,10 +9,12 @@
 
     <div class="jobster-candidate-timeline" *ngFor="let educacion of educacion">
       <div class="jobster-timeline-item">
+
         <div class="jobster-timeline-cricle">
           <i class="far fa-circle"></i>
         </div>
         <div class="jobster-timeline-info">
+
           <div class="dashboard-timeline-info">
             <span class="jobster-timeline-time">{{educacion.fechaInicio}} {{educacion.fechaFin}}</span>
             <h6 class="mb-2">{{educacion.nombreInstituto}}</h6>
@@ -20,12 +22,13 @@
             <p>-----------------------</p>
             <img class="prog-avatar" src="" alt="Foto">
           </div>
+          <div class="float-right btn-group btn-group-sm">
+            <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
+            <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+        </div>
         </div>
       </div>
-         <div class="float-right btn-group btn-group-sm">
-          <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
-          <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-      </div>
+
         </div>
       </div>
       </div>

@@ -1,10 +1,12 @@
 .resume-experience {
+   
     padding-left: 100px;
     padding-top: 60px;
     padding-bottom: 60px;
     position: relative;
     padding-right: 50px;
     background: #f6f6f6;
+    
 }
 .resume-experience:before {
     position: absolute;
@@ -16,6 +18,7 @@
     content: "";
     z-index: -1;
     top: 0;
+    
 }
 .resume-experience .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-cricle {
     border-color: #f6f6f6;
@@ -52,6 +55,7 @@
 /* Jobster Candidate */
 .jobster-candidate-timeline {
     position: relative;
+    
 }
 .jobster-candidate-timeline:before {
     content: "";

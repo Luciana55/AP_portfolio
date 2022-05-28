@@ -1,98 +1,179 @@
-<div class="container-fluid">
-  <h5>Proyectos</h5>
-  <br> 
-  <br>
+
+<div class="container" id="main-container">
+<button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nuevo proyecto</button> 
+<h5 class="resume-experience-title">Proyectos:</h5>
+<br>
+<div class="row" >  
+    <div class="col-md-4" *ngFor="let proyectos of proyectos">
+        <div class="widget-container">
+            <div class="widget">
+                <div class="profile-card">
+                    <div class="card-header">
+                        <div class="header-avatar">
+                            <img src="{{proyectos.urlImagen}}" alt="andy">
+                        </div>
+                        <div class="header-name">
+                            {{proyectos.nombreProyecto}}
+                        </div>
+                    </div>
+                    <div class="card-body bg-info">
+                      <div class="body-description">
+                         - {{proyectos.fecha}} 
+                        
+                    </div>
+                        <div class="body-description">
+                            {{proyectos.descripcion}}
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <br>
+                    <a href="{{proyectos.urlSitio}}" target="_blank"  role="button" class="btn btn-info float-right">Ver proyecto</a>
+                    <div class="card-footer">
+                     
+                        <div class="footer-bottom">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="float-right btn-group btn-group-sm">
+                <a (click)="onOpenModal(proyectos, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                <a (click)="onOpenModal(proyectos, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+            </div>
+        </div>
+    </div>
+    
 </div>
-  <div class="carousel-inner" *ngFor="let proyectos of proyectos">
-    <div class="carousel-item active">
+</div>
+<div class="copyright_area">
+   <div class="container">
       <div class="row">
-        <div class="col-md-6" >
-          <div class="item-box-blog">
-            <div class="item-box-blog-image">
-              <!--Date-->
-              <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">2022</span> </div>
-              <!--Image-->
-              <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
-            </div>
-            <div class="item-box-blog-body">
-              <!--Heading-->
-              <div class="item-box-blog-heading">
-                <a href="#" tabindex="0">
-                  <h5>News Title</h5>
-                </a>
-              </div>
-              <!--Data-->
-              <div class="item-box-blog-data" style="padding: px 15px;">
-                <p><i class="fa fa-user-o"></i> Admin, <i class="fa fa-comments-o"></i> Comments(3)</p>
-              </div>
-              <!--Text-->
-              <div class="item-box-blog-text">
-                <p>{{proyectos.descripcion}}</p>
-              </div>
-              <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
-              <!--Read More Button-->
-            </div>
+         <div class="col-lg-12">
+            <br>
+            <br>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Add Modal -->
+<div class="modal fade" id="addProyectosModal" tabindex="-1" role="dialog" aria-labelledby="addProyectosModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="addProyectosModalLabel">Add Proyectos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+       </div>
+       <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddProyectos(addForm)">
+          <div class="form-group">
+             <label for="name">Posición:</label>
+             <input type="text" ngModel name="name" class="form-control" id="name" placeholder="" required>
+          </div>
+          <div class="form-group">
+             <label for="email">Nombre de empresa:</label>
+             <input type="email" ngModel name="email" class="form-control" id="email" placeholder="" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Fecha de incio:</label>
+             <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="--/--/----" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Fecha final:</label>
+             <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="--/--/----" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Descripción:</label>
+             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
+          </div>
+          <div class="modal-footer">
+             <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Guardar Cambios</button>
+          </div>
+          </form>
+       </div>
+    </div>
+  </div>
+         </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="updateProyectosModal" tabindex="-1" role="dialog" aria-labelledby="ProyectosEditModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="updateProyectosModalLabel">Edit Proyectos {{editProyectos?.nombreProyecto}}</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <form #editForm="ngForm">
+                      <div class="form-group">
+                         <label for="name">Nombre de proyecto:</label>
+                         <input type="text" ngModel="{{editProyectos?.nombreProyecto}}" name="nombreProyecto" class="form-control" id="nombreProyecto" aria-describedby="emailHelp" placeholder="" required>
+                      </div>
+                      <input type="hidden" ngModel="{{editProyectos?.id}}" name="id" class="form-control" id="id" placeholder="id">
+                      <input type="hidden" ngModel="{{editProyectos?.nombreProyecto}}" name="nombreProyecto" class="form-control" id="nombreProyecto" placeholder="">
+                      <div class="form-group">
+                        <label for="email">Nombre de proyecto:</label>
+                        <input type="email" ngModel="{{editProyectos?.nombreProyecto}" name="nombreProyecto" class="form-control" id="nombreProyecto" placeholder="">
+                     </div>
+                      <div class="form-group">
+                         <label for="email">Fecha:</label>
+                         <input type="email" ngModel="{{editProyectos?.fecha}}" name="fecha" class="form-control" id="fecha" placeholder="--/--/--">
+                      </div>
+                      <div class="form-group">
+                         <label for="phone">Imagen:</label>
+                         <input type="text" ngModel="{{editProyectos?.urlImagen}}" name="urlImagen" class="form-control" id="urlImagen" placeholder="--/--/--">
+                      </div>                      
+                      <div class="form-group">
+                         <label for="phone">Descripción:</label>
+                         <input type="text" ngModel="{{editProyectos?.descripcion}}" name="descripcion" class="form-control" id="descripcion" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Url Sito:</label>
+                        <input type="text" ngModel="{{editProyectos?.urlSitio}}" name="urlSitio" class="form-control" id="urlSitio" placeholder="">
+                     </div>
+                      <div class="modal-footer">
+                         <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                         <button (click)="onUpdateProyectos(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Guardar Cambios</button>
+                      </div>
+                   </form>
+                </div>
+             </div>
           </div>
         </div>
-  <div class="col-md-6" >
-    <div class="item-box-blog">
-      <div class="item-box-blog-image">
-        <!--Date-->
-        <div class="item-box-blog-date bg-blue-ui white"> <span class="mon">2022</span> </div>
-        <!--Image-->
-        <figure> <img alt="" src="https://cdn.pixabay.com/photo/2017/02/08/14/25/computer-2048983_960_720.jpg"> </figure>
-      </div>
-      <div class="item-box-blog-body">
-        <!--Heading-->
-        <div class="item-box-blog-heading">
-          <a href="#" tabindex="0">
-            <h5>News Title</h5>
-          </a>
+        
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteProyectosModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="deleteModelLabel">Eliminar Experiencia</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <p>Seguro que quiere eliminar la experiencia: {{deleteProyectos?.nombreProyecto}}?</p>
+                   <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      <button (click)="onDeleteProyectos(deleteProyectos?.id)" class="btn btn-danger" data-dismiss="modal">Sí</button>
+                   </div>
+                </div> 
+             </div>
+          </div>
         </div>
-        <!--Data-->
-        <div class="item-box-blog-data" style="padding: px 15px;">
-          <p><i class="fa fa-user-o"></i> Admin, <i class="fa fa-comments-o"></i> Comments(3)</p>
+        
+        
+        <!-- Notification for no employees -->
+        <div *ngIf="proyectos?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+        <div class="alert alert-info" role="alert">
+          <h4 class="alert-heading">Error!</h4>
+          <p>No se encontró ningun proyecto.</p>
         </div>
-        <!--Text-->
-        <div class="item-box-blog-text">
-          <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
         </div>
-        <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
-        <!--Read More Button-->
-      </div>
-    </div>
-  </div>
-
-  <!--footer-->
-<!-- Footer -->
-<div class="col-lg-12">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-       
-        <div class="col-md-4 offset-md-1 footer-contact wow fadeInDown">
-          <h3>Contact</h3>
-              <p><i class="fas fa-map-marker-alt"></i> Via Rossini 10, 10136 Turin Italy</p>
-              <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
-              <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
-              <p><i class="fab fa-skype"></i> Skype: you_online</p>
-              </div>
-             
-        </div>
-    </div>
-  </div>
-  
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row">
-           <div class="col footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a> 
-      <a href="#"><i class="fab fa-discord"></i></a> 
-      <a href="#"><i class="fab fa-google"></i></a> 
-      <a href="#"><i class="fab fa-linkedin"></i></a> 
-      <a href="#"><i class="fab fa-github"></i></a>
-              </div>
-         </div>
-    </div>
-  </div>
-  </div>

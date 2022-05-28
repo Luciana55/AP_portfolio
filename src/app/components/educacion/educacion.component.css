@@ -1,3 +1,8 @@
+
+
+
+
+
 .resume-experience {
     padding-left: 100px;
     padding-top: 60px;
@@ -94,7 +99,7 @@
     top: -8px;
     left: -7px;
     position: absolute;
-    color: #21c87a;
+    color: #6121c8;
 }
 
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info {
@@ -103,7 +108,7 @@
     padding: 5px 0 0 70px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info h6 {
-    color: #21c87a;
+    color: #6121c8;
     margin: 5px 0 0px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info span {
@@ -113,7 +118,7 @@
 }
 
 .jobster-candidate-timeline span.jobster-timeline-time {
-    color: #646f79 !important;
+    color: #686479 !important;
 }
 
 .jobster-candidate-timeline .jobster-timeline-icon {

@@ -4,7 +4,7 @@
     margin-bottom: 20px;
 } 
 
-
+/* 
 .resume-experience {
     padding-left: 100px;
     padding-top: 60px;
@@ -57,7 +57,7 @@
 }
 
 /* Jobster Candidate */
-.jobster-candidate-timeline {
+/* .jobster-candidate-timeline {
     position: relative;
 }
 .jobster-candidate-timeline:before {
@@ -141,7 +141,7 @@
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: 16px;
-}
+} */
 a {
     color: #ffffff;
-}
+} 
