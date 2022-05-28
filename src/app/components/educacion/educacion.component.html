@@ -94,7 +94,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
        <div class="modal-header">
-          <h5 class="modal-title" id="addEmployeeModalLabel">Add Educacion</h5>
+          <h5 class="modal-title" id="addEmployeeModalLabel">Add Employee</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -145,7 +145,7 @@
                    <form #editForm="ngForm">
                       <div class="form-group">
                          <label for="name">Nombre</label>
-                         <input type="text" ngModel="{{editEducacion?.nombreInstituto}}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
+                         <input type="text" ngModel="{{editEducacion?.nombreInstituto}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
                       </div>
                       <input type="hidden" ngModel="{{editEducacion?.id}}" name="id" class="form-control" id="id" placeholder="id">
                       <input type="hidden" ngModel="{{editEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" placeholder="titulo">
