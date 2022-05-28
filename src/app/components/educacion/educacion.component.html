@@ -12,7 +12,7 @@
           <div class="dashboard-timeline-info">
             <span class="jobster-timeline-time">2014 - 2018</span>
             <h6 class="mb-2">Diploma in Graphics Design</h6>
-            <span>- Graphic Arts Institute</span>
+            <span *ngFor="let educacion of educacion">{{educacion.titulo}}</span>
             <p class="mt-2">Have some fun and hypnotize yourself to be your very own “Ghost of Christmas future” and see what the future holds for you.</p>
           </div>
         </div>
@@ -26,12 +26,177 @@
             <span class="jobster-timeline-time">2018 - Pres</span>
             <h6 class="mb-2">Masters in Software Engineering</h6>
             <span>- Engineering University</span>
-            <p class="mt-2">This is the beginning of creating the life that you want to live. Know what the future holds for you as a result of the choice you can make today.</p>
+            <p class="mt-2">jjhhgghghghg</p>
           </div>
+
         </div>
       </div>
     </div>
-  </div>
+</div>
 </div>
 </div>
 </section>
+
+<!--Div de ejemplo para models-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" style="color:white;">Employee Manager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+     <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+           <a class="nav-link" (click)="onOpenModal(null, 'add')">Add Employee <span class="sr-only">(current)</span></a>
+        </li>
+       
+     </ul>
+<!--     <form class="form-inline my-2 my-lg-0">
+        <input type="search" (ngModelChange)="searchEmployees(key.value)" #key="ngModel" ngModel
+         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search employees..." required>
+     </form> -->
+  </div>
+</nav>
+<!-- prueba de models-->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container" id="main-container">
+    <div class="row">
+        <div *ngFor="let educacion of educacion" class="col-md-6 col-xl-3">
+            <div class="card m-b-30"><!---->
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href=""><img src="{{educacion.url_foto}}" alt="" class="img-fluid rounded-circle w-60"></a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <h5>{{educacion.nombreInstituto}}</h5>
+                        <p class="m-0">{{educacion.titulo}}</p>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fa fa-envelope float-right"></i>Email : <a href="#">PaulGoyette@gmail.com</a></li>
+                    <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : 000 123-456</li>
+                </ul>
+                <div class="card-body">
+                    <div class="float-right btn-group btn-group-sm">
+                        <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                        <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
+
+        <!-- Add Modal -->
+        <div class="modal fade" id="addEducacionModal" tabindex="-1" role="dialog" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="addEmployeeModalLabel">Add Educacion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
+       </div>
+       <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddEducacion(addForm)">
+          <div class="form-group">
+             <label for="name">Name</label>
+             <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+             <label for="email">Email Address</label>
+             <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Job title</label>
+             <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="Job title" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Phone</label>
+             <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="Phone" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Image URL</label>
+             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL" required>
+          </div>
+          <div class="modal-footer">
+             <button type="button" id="add-educacion-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+          </div>
+          </form>
+       </div>
+    </div>
+  </div>
+         </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="updateEducacionModal" tabindex="-1" role="dialog" aria-labelledby="EducacionEditModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="updateEmployeeModalLabel">Edit Employee {{editEducacion?.nombreInstituto}}</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <form #editForm="ngForm">
+                      <div class="form-group">
+                         <label for="name">Nombre</label>
+                         <input type="text" ngModel="{{editEducacion?.nombreInstituto}}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
+                      </div>
+                      <input type="hidden" ngModel="{{editEducacion?.id}}" name="id" class="form-control" id="id" placeholder="id">
+                      <input type="hidden" ngModel="{{editEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" placeholder="titulo">
+                      <div class="form-group">
+                         <label for="email">fechaInicio</label>
+                         <input type="email" ngModel="{{editEducacion?.fechaInicio}}" name="fechaInicio" class="form-control" id="fechaInicio" placeholder="fechaInicio">
+                      </div>
+                      <div class="form-group">
+                         <label for="phone">fechaFin</label>
+                         <input type="text" ngModel="{{editEducacion?.fechaFin}}" name="fechaFin" class="form-control" id="fechaFin" placeholder="fechaFin">
+                      </div>                      
+                      <div class="form-group">
+                         <label for="phone">Image URL</label>
+                         <input type="text" ngModel="{{editEducacion?.url_foto}}" name="url_foto" class="form-control" id="url_foto" placeholder="Image URL">
+                      </div>
+                      <div class="modal-footer">
+                         <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                         <button (click)="onUpdateEducacion(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Save changes</button>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+        </div>
+        
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteEducacionModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="deleteModelLabel">Delete Educacion</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <p>Are you sure you want to delete employee {{deleteEducacion?.nombreInstituto}}?</p>
+                   <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      <button (click)="onDeleteEducacion(deleteEducacion?.id)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+                   </div>
+                </div> 
+             </div>
+          </div>
+        </div>
+        
+        
+        <!-- Notification for no employees -->
+        <div *ngIf="educacion?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+        <div class="alert alert-info" role="alert">
+          <h4 class="alert-heading">NO EMPLOYEES!</h4>
+          <p>No Employees were found.</p>
+        </div>
+        </div>

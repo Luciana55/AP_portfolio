@@ -13,6 +13,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { PersonaService } from './service/persona.service';
+import { EducacionService } from './service/educacion.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PersonaService, EducacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

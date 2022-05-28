@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { PersonaService } from 'src/app/service/persona.service';
 import { Persona } from './persona';
 
@@ -31,7 +32,67 @@ export class PersonaComponent implements OnInit {
       alert(error.message);
     }
   })
+  }public onAddPersona(addForm: NgForm): void {
+    document.getElementById('add-persona-modal')?.click();
+    this.personaService.addPersona(addForm.value).subscribe(
+      (response: Persona) => {
+        console.log(response);
+        this.getPersona();
+        addForm.reset();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+        addForm.reset();
+      }
+    );
   }
+
+  public onUpdatePersona(persona: Persona): void {
+    this.personaService.updatePersona(persona).subscribe(
+      (response: Persona) => {
+        console.log(response);
+        this.getPersona();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public onDeletePersona(personaId: number): void {
+    this.personaService.deletePersona(personaId).subscribe(
+      (response: void) => {
+        console.log(response);
+        this.getPersona();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+  
+
+  public onOpenModal(educacion: Persona, mode: string): void{
+    const container = document.getElementById('main-container');
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    if (mode === 'add') {
+      button.setAttribute('data-target', '#addPersonaModal');
+    }
+    if (mode === 'edit') {
+      this.editPersona = educacion;
+      button.setAttribute('data-target', '#updatePersonaModal');
+    }
+    if (mode === 'delete') {
+      this.deletePersona = educacion;
+      button.setAttribute('data-target', '#deletePersonaModal');
+    }
+    container!.appendChild(button);
+    button.click();
+  }
+
 
 
 

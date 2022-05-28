@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Persona } from '../components/persona/persona';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +13,8 @@ export class PersonaService {
 
   constructor(private http: HttpClient) { }
 
-  public getPersona(): Observable<Persona> {
-    return this.http.get<Persona>(`${this.apiServerUrl}/persona/id/1`);
+  public getPersona(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(`${this.apiServerUrl}/persona/all`);
   }
 
   public addPersona(persona: Persona): Observable<Persona> {
