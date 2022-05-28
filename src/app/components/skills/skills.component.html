@@ -1,7 +1,7 @@
 <br>
 <br>
-<div class="container">
-  <h5>h5 Bootstrap heading</h5>
+<div class="container" *ngFor="let skills of skills">
+  <h5>{{skills.skill}}</h5>
  </div>
 <div class="progress">
     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 15%" aria-valuenow="15%" aria-valuemin="0" aria-valuemax="100"></div>

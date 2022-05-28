@@ -3,7 +3,7 @@
   <br> 
   <br>
 </div>
-  <div class="carousel-inner">
+  <div class="carousel-inner" *ngFor="let proyectos of proyectos">
     <div class="carousel-item active">
       <div class="row">
         <div class="col-md-6" >
@@ -27,7 +27,7 @@
               </div>
               <!--Text-->
               <div class="item-box-blog-text">
-                <p>Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing. Lorem ipsum dolor.</p>
+                <p>{{proyectos.descripcion}}</p>
               </div>
               <div class="mt"> <a href="#" tabindex="0" class="btn bg-blue-ui white read">read more</a> </div>
               <!--Read More Button-->
