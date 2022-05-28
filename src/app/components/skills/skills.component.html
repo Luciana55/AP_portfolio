@@ -1,108 +1,190 @@
+<!------------------------------------------------------>
+    <br>
+    <br>
+    <br>
+   <div class="container" id="main-container">
+    <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nueva skill</button> 
+    <h5 class="resume-experience-title">Hard & Soft Skills:</h5>
+    <br>
+    <div class="row">
+        <div class="col-sm-6 mb-3 "*ngFor="let skills of skills" >
+            <div class="card card-margin">
+                <div class="card-body pt-0">
+                    <div class="widget-49">
+                        <div class="widget-49-title-wrapper">
+                          <div class="container">
+                            <br>
+                            <h5>{{skills.skill}}</h5>
+                           </div>
+                          <div class="progress">
+                          <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:{{skills.porcentaje}}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{skills.porcentaje}}%</div>
+                          </div>
+                          <div class="align-items-center">
+                          <img class="rounded-circle" width="45" src="{{skills.url}}" alt="">
+                          </div>
+                          <div class="float-right btn-group btn-group-sm">
+                <a (click)="onOpenModal(skills, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                <a (click)="onOpenModal(skills, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                        </div>
+                        </div>
 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <div class="col-sm-6 mb-3">
+          <div class="card card-margin">
+            <div class="card-body pt-0">
+                <div class="widget-49">
+                    <div class="widget-49-title-wrapper">
+                      <div class="container" id="main-container">
+                        <br>
+                        <h5>h5 Bootstrap heading</h5>
+                       </div>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="container">
+                        <h5>h5 Bootstrap heading</h5>
+                       </div>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="container">
+                        <h5>h5 Bootstrap heading</h5>
+                       </div>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="container">
+                        <h5>h5 Bootstrap heading</h5>
+                       </div>
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="widget-49-meeting-action">
+                        <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+     </div>
+   </div>
+  <br>
+  <br>
+  <br>
+   
 
-
-<div><h5>Hard & Soft Skills</h5></div>
-<br>
-<div class="container" *ngFor="let skills of skills">
-  <h5>{{skills.skill}}</h5>
- </div>
-<div class="progress">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 15%" aria-valuenow="15%" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-  <div class="container">
-    <h5>h5 Bootstrap heading</h5>
-   </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-  <div class="container">
-    <h5>h5 Bootstrap heading</h5>
-   </div>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">%50</div>
-  </div>
-  <div class="container">
-    <h5>h5 Bootstrap heading</h5>
-   </div>
-  <div class="progress" >
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-  </div>
-  <div class="container">
-    <h5>h5 Bootstrap heading</h5>
-   </div>
-  <div class="progress" style="height: 20px;">
-    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">%70</div>
-  </div>
- 
- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
- <div class="col-lg-12" id="main-container">
-     <div class="resume-experience">
-         
-           <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nueva Skill</button>
-           
-         <h5 class="resume-experience-title">Skills:</h5>
-         <div *ngFor="let skills of skills">
-          
-            <h5>h5 Bootstrap heading</h5>
-           
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="container">
-            <h5>h5 Bootstrap heading</h5>
-           </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">%50</div>
-          </div>
-          <div class="container">
-            <h5>h5 Bootstrap heading</h5>
-           </div>
-          <div class="progress" >
-            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <div class="container">
-            <h5>h5 Bootstrap heading</h5>
-           </div>
-          <div class="progress" style="height: 20px;">
-            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">%70</div>
-          </div>
-          
-          </div>
+    <!------------------------------------------------------------------->
+   <!-- Add Modal -->
+<div class="modal fade" id="addExperienciaModal" tabindex="-1" role="dialog" aria-labelledby="addExperienciaModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+       <div class="modal-header">
+          <h5 class="modal-title" id="addExperienciaModalLabel">Add Experiencia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          </button>
        </div>
-     
- </div>
-
-
- <div><h5>Hard & Soft Skills</h5></div>
- <br>
- <div class="container" *ngFor="let skills of skills">
-   <h5>{{skills.skill}}</h5>
+       <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="onAddSkills(addForm)">
+          <div class="form-group">
+             <label for="name">Posición:</label>
+             <input type="text" ngModel name="name" class="form-control" id="name" placeholder="" required>
+          </div>
+          <div class="form-group">
+             <label for="email">Nombre de empresa:</label>
+             <input type="email" ngModel name="email" class="form-control" id="email" placeholder="" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Fecha de incio:</label>
+             <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="--/--/----" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Fecha final:</label>
+             <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="--/--/----" required>
+          </div>
+          <div class="form-group">
+             <label for="phone">Descripción:</label>
+             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
+          </div>
+          <div class="modal-footer">
+             <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Guardar Cambios</button>
+          </div>
+          </form>
+       </div>
+    </div>
   </div>
- <div class="progress">
-     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 15%" aria-valuenow="15%" aria-valuemin="0" aria-valuemax="100"></div>
-   </div>
-   <div class="container">
-     <h5>h5 Bootstrap heading</h5>
-    </div>
-   <div class="progress">
-     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-   </div>
-   <div class="container">
-     <h5>h5 Bootstrap heading</h5>
-    </div>
-   <div class="progress">
-     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">%50</div>
-   </div>
-   <div class="container">
-     <h5>h5 Bootstrap heading</h5>
-    </div>
-   <div class="progress" >
-     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-   </div>
-   <div class="container">
-     <h5>h5 Bootstrap heading</h5>
-    </div>
-   <div class="progress" style="height: 20px;">
-     <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">%70</div>
-   </div>
-  
+         </div>
+
+        <!-- Edit Modal -->
+        <div class="modal fade" id="updateSkillModal" tabindex="-1" role="dialog" aria-labelledby="SkillEditModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="updateSkillModalLabel">Editar Skill {{editSkills?.skill}}</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <form #editForm="ngForm">
+                      <div class="form-group">
+                         <label for="name">Skill:</label>
+                         <input type="text" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" aria-describedby="emailHelp" placeholder="" required>
+                      </div>
+                      <input type="hidden" ngModel="{{editSkills?.id}}" name="id" class="form-control" id="id" placeholder="id">
+                      <input type="hidden" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" placeholder="">
+                      <div class="form-group">
+                        <label for="email">Porcentaje:</label>
+                        <input type="email" ngModel="{{editSkills?.porcentaje}}" name="porcentaje" class="form-control" id="porcentaje" placeholder="">
+                     </div>
+                      <div class="form-group">
+                         <label for="email">Url de imagen:</label>
+                         <input type="email" ngModel="{{editSkills?.url}}" name="url" class="form-control" id="url" placeholder="">
+                      </div>                           
+
+                      <div class="modal-footer">
+                         <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                         <button (click)="onUpdateSkills(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Guardar Cambios</button>
+                      </div>
+                   </form>
+                </div>
+             </div>
+          </div>
+        </div>
+        
+        <!-- Delete Modal -->
+        <div class="modal fade" id="deleteSkillModal" tabindex="-1" role="dialog" aria-labelledby="deleteSkillLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                   <h5 class="modal-title" id="deleteModelLabel">Eliminar Skill</h5>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                   </button>
+                </div>
+                <div class="modal-body">
+                   <p>Seguro que quiere eliminar la Skill: {{deleteSkills?.id}}?</p>
+                   <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                      <button (click)="onDeleteSkills(deleteSkills?.id)" class="btn btn-danger" data-dismiss="modal">Sí</button>
+                   </div>
+                </div> 
+             </div>
+          </div>
+        </div>
+        
+        
+        <!-- Notification for no employees -->
+        <div *ngIf="skills?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+        <div class="alert alert-info" role="alert">
+          <h4 class="alert-heading">Error!</h4>
+          <p>No se encontró ninguna experiencia de trabajo.</p>
+        </div>
+        </div>
