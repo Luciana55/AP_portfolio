@@ -72,7 +72,7 @@ export class PersonaComponent implements OnInit {
   }
   
 
-  public onOpenModal(educacion: Persona, mode: string): void{
+  public onOpenModal(persona: Persona, mode: string): void{
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -82,11 +82,11 @@ export class PersonaComponent implements OnInit {
       button.setAttribute('data-target', '#addPersonaModal');
     }
     if (mode === 'edit') {
-      this.editPersona = educacion;
+      this.editPersona = persona;
       button.setAttribute('data-target', '#updatePersonaModal');
     }
     if (mode === 'delete') {
-      this.deletePersona = educacion;
+      this.deletePersona = persona;
       button.setAttribute('data-target', '#deletePersonaModal');
     }
     container!.appendChild(button);
