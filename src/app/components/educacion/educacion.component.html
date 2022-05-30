@@ -16,11 +16,12 @@
         <div class="jobster-timeline-info">
 
           <div class="dashboard-timeline-info">
+             
             <span class="jobster-timeline-time">{{educacion.fechaInicio}} {{educacion.fechaFin}}</span>
             <h6 class="mb-2">{{educacion.nombreInstituto}}</h6>
             <span>{{educacion.titulo}}</span>
             <p>-----------------------</p>
-            <img class="prog-avatar" src="" alt="Foto">
+            <img img class="rounded-circle" width="100" src="{{educacion.url_foto}}" alt="Foto">
           </div>
           <div class="float-right btn-group btn-group-sm">
             <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>

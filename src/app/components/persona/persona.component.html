@@ -1,4 +1,4 @@
-    <div class="col-lg-12" class="main-container">
+<!--     <div class="col-lg-12" class="main-container">
         <div class="card text-center" *ngFor="let persona of persona">                  
                 <div class="float-right btn-group btn-group-sm">             
                 </div>             
@@ -60,5 +60,41 @@
             </div>
         </div>
     </div>
+ -->
+
+
+    <div class="container" id="main-container">
+        <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nueva skill</button> 
+        <h5 class="resume-experience-title">...</h5>
+        <br>
+        <div class="row">
+            <div class="col-lg-12"*ngFor="let persona of persona" >
+                <div class="card card-margin">
+                    <div class="card-body pt-0">
+                        <div class="widget-49">
+                            <div class="widget-49-title-wrapper">
+                              <div class="container">
+                                <br>
+                                <div class="left">
+                                <h5>Acerca de:</h5></div>
+                               </div>
+                              <div class="progress">
+                              <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">%</div>
+                              </div>
+                              <div class="center">
+                              <img class="rounded-circle" width="30" src="" alt="">
+                              </div>
+                              <div class="float-right btn-group btn-group-sm">
+                    <a  (click)="onOpenModal(persona, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                    <a  (click)="onOpenModal(persona, 'edit')"class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                            </div>
+                            </div>
+    
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 

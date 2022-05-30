@@ -10,11 +10,15 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { PersonaService } from './service/persona.service';
 import { EducacionService } from './service/educacion.service';
+import { ExperienciaService } from './service/experiencia.service';
+import { HeaderService } from './service/header.service';
+import { ProyectosService } from './service/proyectos.service';
+import { SkillsService } from './service/skills.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import { EducacionService } from './service/educacion.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PersonaService, EducacionService],
+  providers: [PersonaService, EducacionService,
+  ExperienciaService, HeaderService, ProyectosService, SkillsService
+ 
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
