@@ -3,16 +3,16 @@
     <br>
     <br>
    <div class="container" id="main-container">
-    <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar nueva skill</button> 
+    <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
     <h5 class="resume-experience-title">Hard & Soft Skills:</h5>
     <br>
     <div class="row">
-        <div class="col-sm-6 mb-3 "*ngFor="let skills of skills" >
+        <div class="col-sm-6 mb-3" *ngFor="let skills of skills" >
             <div class="card card-margin">
                 <div class="card-body pt-0">
                     <div class="widget-49">
                         <div class="widget-49-title-wrapper">
-                          <div class="container">
+                          <div class="container" id="main-container">
                             <br>
                             <div class="center">
                             <h5>{{skills.skill}}</h5></div>

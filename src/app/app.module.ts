@@ -11,7 +11,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { PersonaService } from './service/persona.service';
 import { EducacionService } from './service/educacion.service';
@@ -35,7 +35,8 @@ import { SkillsService } from './service/skills.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PersonaService, EducacionService,
   ExperienciaService, HeaderService, ProyectosService, SkillsService
