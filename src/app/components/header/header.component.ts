@@ -93,19 +93,7 @@ export class HeaderComponent implements OnInit {
   }
 
  /** LOGIN */
- public onOpenModal2(persona: Persona, mode: string): void{
-  const container = document.getElementById('main-container');
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.style.display = 'none';
-  button.setAttribute('data-toggle', 'modal');
-  if (mode === 'add') {
-    button.setAttribute('data-target', '#addPersonaModal');
-  }
 
-  container!.appendChild(button);
-  button.click();
-}
 
 
 

@@ -26,21 +26,18 @@
                         <div class="body-description">
                             {{proyectos.descripcion}}
                             
-                        </div>
-                        
+                        </div>                      
                         
                     </div>
                     <br>
-                    <a href="{{proyectos.urlSitio}}" target="_blank"  role="button" class="btn btn-info float-right">Código <i class="fab fa-github"></i></a>
+                    <a href="{{proyectos.urlSitio}}" target="_blank"  role="button" class="btn btn-info float-right">Proyecto <i class="fa fa-eye" aria-hidden="true"></i></a>
                     <div class="card-footer">
-                     
-                        <div class="footer-bottom">
-
+                     <div class="footer-bottom">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="float-right btn-group btn-group-sm">
+            <div class="float-right btn-group btn-group-sm" >
                 <a (click)="onOpenModal(proyectos, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
                 <a (click)="onOpenModal(proyectos, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
             </div>
