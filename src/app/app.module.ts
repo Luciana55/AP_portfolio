@@ -19,6 +19,8 @@ import { ExperienciaService } from './service/experiencia.service';
 import { HeaderService } from './service/header.service';
 import { ProyectosService } from './service/proyectos.service';
 import { SkillsService } from './service/skills.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { SkillsService } from './service/skills.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [PersonaService, EducacionService,
   ExperienciaService, HeaderService, ProyectosService, SkillsService
