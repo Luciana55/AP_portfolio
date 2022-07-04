@@ -98,7 +98,7 @@
     top: -8px;
     left: -7px;
     position: absolute;
-    color: #21c87a;
+    color: #048d92;
 }
 
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info {
@@ -107,7 +107,7 @@
     padding: 5px 0 0 70px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info h6 {
-    color: #21c87a;
+    color: #12abb1;
     margin: 5px 0 0px;
 }
 .jobster-candidate-timeline .jobster-timeline-item .jobster-timeline-info span {
@@ -141,4 +141,8 @@
 }
 a {
     color: #ffffff;
+}
+.box{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
