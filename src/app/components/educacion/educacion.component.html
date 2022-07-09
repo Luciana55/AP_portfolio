@@ -1,37 +1,36 @@
-<div class="col-lg-12" class="main-container">
-   <div class="resume-experience">
-   <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null!, 'add')">Agregar <i class="fa fa-plus"></i></button>
-<div class="timeline-box mt-4">
-   <h5 class="resume-experience-title">Educación:</h5>
-
-    <div class="jobster-candidate-timeline" *ngFor="let educacion of educacion">
-      <div class="jobster-timeline-item">
-
-        <div class="jobster-timeline-cricle">
-          <i class="far fa-circle"></i>
-        </div>
-        <div class="jobster-timeline-info">
-
-          <div class="dashboard-timeline-info">
-             
-            <span class="jobster-timeline-time">{{educacion.fechaInicio}} {{educacion.fechaFin}}</span>
-            <h6 class="mb-2">{{educacion.nombreInstituto}}</h6>
-            <span>{{educacion.titulo}}</span>
-            <p>-----------------------</p>
-            <img img class="rounded-circle" width="100" src="{{educacion.url_foto}}" alt="Foto">
-          </div>
-          <div class="float-right btn-group btn-group-sm">
-            <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i></a>
-            <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
-        </div>
-        </div>
-      </div>
-
-        </div>
-      </div>
-      </div>
-      </div>
-
+<div class="container" id="main-container">
+   <div class="box">
+       <div class="timeline-box mt-4">
+         <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button>
+         <h5 class="resume-experience-title">Educación:</h5>
+         <br>
+       <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let educacion of educacion">
+       <div class="jobster-candidate-timeline">
+         <div class="jobster-timeline-item">
+           <div class="jobster-timeline-cricle">
+             <i class="far fa-circle"></i>
+           </div>
+           <div class="jobster-timeline-info">
+             <div class="dashboard-timeline-info">
+               <span class="jobster-timeline-time">{{educacion.fechaInicio}} to {{educacion.fechaFin}}</span>
+               <h6 class="mb-2">{{educacion.titulo}}</h6>
+               <span>- {{educacion.nombreInstituto}}</span>
+               <p class="mt-2">{{educacion.url_foto}}</p>
+             </div>
+             <div class="float-right btn-group btn-group-sm">
+               <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+               <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+           </div>
+           </div>
+         </div>
+         
+       </div>
+       </div>
+       </div>
+     </div>
+   </div>
+</div>
 
 
         <!-- Add Modal -->

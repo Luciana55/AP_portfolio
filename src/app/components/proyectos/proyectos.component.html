@@ -73,12 +73,12 @@
        <div class="modal-body">
           <form #addForm="ngForm" (ngSubmit)="onAddProyectos(addForm)">
           <div class="form-group">
-             <label for="name">Posición:</label>
+             <label for="name">Nombre del proyecto:</label>
              <input type="text" ngModel name="name" class="form-control" id="name" placeholder="" required>
           </div>
           <div class="form-group">
-             <label for="email">Nombre de empresa:</label>
-             <input type="email" ngModel name="email" class="form-control" id="email" placeholder="" required>
+             <label for="email">Url:</label>
+             <input type="email" ngModel name="url" class="form-control" id="url" placeholder="" required>
           </div>
           <div class="form-group">
              <label for="phone">Fecha de incio:</label>
@@ -92,9 +92,13 @@
              <label for="phone">Descripción:</label>
              <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
           </div>
+          <div class="form-group">
+            <label for="phone">Foto:</label>
+            <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
+         </div>
           <div class="modal-footer">
              <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Guardar Cambios</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Agregar</button>
           </div>
           </form>
        </div>
@@ -142,7 +146,7 @@
                      </div>
                       <div class="modal-footer">
                          <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
-                         <button (click)="onUpdateProyectos(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Guardar Cambios</button>
+                         <button (click)="onUpdateProyectos(editForm.value)" data-dismiss="modal" class="btn btn-primary">Guardar Cambios</button>
                       </div>
                    </form>
                 </div>
