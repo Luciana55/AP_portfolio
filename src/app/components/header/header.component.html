@@ -1,18 +1,35 @@
+<!-- navbar-->
+
 <header class="header fixed-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container" *ngFor="let persona of persona">            
             <a class="navbar-brand" href="#" >
-                <img src="../../../assets/APLogo2.png "
-                width="111" height="80" alt="Argentina Programa - #YoProgramo"> <b>- #YoProgramo</b>
-             
-            </a>
+                <img src= "https://firebasestorage.googleapis.com/v0/b/images-angular-1965b.appspot.com/o/arg-programa.png?alt=media&token=38928ffb-d57e-4e50-92b6-f35a6d3a86d2"
+                width="120" height="40" alt="Argentina Programa">
+             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="navbar-nav ml-auto" >
-                   
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#2">Educación</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#3">Experiencia</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#4">Skills</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#5">Proyectos</a>
+                      </li>
+                    <div>
                     <li class="nav-item" >
                         <a class="nav-link scroll-link" href="mailto:{{persona.email}}"><i class="fab fa-google"></i></a>
                     <li class="nav-item">
@@ -21,79 +38,17 @@
                     <li class="nav-item">
                         <a class="nav-link scroll-link" href="https://github.com/Luciana55" target="_blank"><i class="fab fa-github"></i></a>
                     </li>
+                </div>
+                <button type="button" class="btn btn-info margin">Login</button>
                 </ul>
             </div>
-            
-            <ul class="nav navbar-nav navbar-right">
-            <button type="button" class="btn btn-info">         
-                Login</button>
-            </ul>
+
         </div>
     </nav>
 </header>
-  <!-- fin navbar-->
-  <!-- Add Modal -->
-  <div class="modal fade" id="addEducacionModal" tabindex="-1"  data-keyboard="false" data-backdrop="static" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
-    <div class="modal-dialog" >
-      <div class="modal-content">
-         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Add Employee</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-         </div>
-         <div class="modal-body">
-            <form #addForm="ngForm" (ngSubmit)="onAddPersona(addForm)">
-            
-               <label for="name">Name</label>
-               <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
-           
-            
-               <label for="email">Email Address</label>
-               <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
-            
-            
-               <label for="phone">Job title</label>
-               <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="Job title" required>
-            
-            
-               <label for="phone">Phone</label>
-               <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="Phone" required>
-            
-            
-               <label for="phone">Image URL</label>
-               <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL" required>
-            
-            <div class="modal-footer">
-               <button type="button" id="add-educacion-modal" class="btn btn-secondary" data-dismiss="modal">Close</button>
-               <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
-            </div>
-            </form>
-         </div>
-      </div>
-    </div>
-           </div>
 
-<!-- Header-->
-  <div class="container" *ngFor="let persona of persona" >
-    <div class="profile-page tx-13">
-        <div class="row">
-            <div class="col-12 grid-margin">
-                <div class="profile-header">
-                    <div class="cover">
-                        <div class="gray-shade"></div>
-                        <figure>
-                            <img src="https://airwallpaper.com/wp-content/uploads/wall003/New-Avatar-Background.jpg" class="img-fluid" alt="profile cover">
-                        </figure>
-                        <div class="cover-body d-flex justify-content-between align-items-center">
-                            <div>
-                                <img class="profile-pic" src="https://image.shutterstock.com/image-vector/profile-icon-female-avatar-woman-260nw-308471408.jpg" alt="profile photo">
-                                <span class="profile-name">{{persona.nombre}} {{persona.apellido}}</span>
-                            </div>                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-  </div>
+  <!-- fin navbar-->
+
+ <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>

@@ -1,6 +1,4 @@
-<br>
-<br>
-<br>
+<div id="5">
 <div class="container" id="main-container">
 <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
 <h5 class="resume-experience-title">Proyectos:</h5>
@@ -59,13 +57,14 @@
       </div>
    </div>
 </div>
+</div>
 
 <!-- Add Modal -->
 <div class="modal fade" id="addProyectosModal" tabindex="-1" role="dialog" aria-labelledby="addProyectosModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
        <div class="modal-header">
-          <h5 class="modal-title" id="addProyectosModalLabel">Add Proyectos</h5>
+          <h5 class="modal-title" id="addProyectosModalLabel">Agregar Proyecto</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -77,28 +76,24 @@
              <input type="text" ngModel name="name" class="form-control" id="name" placeholder="" required>
           </div>
           <div class="form-group">
-             <label for="email">Url:</label>
-             <input type="email" ngModel name="url" class="form-control" id="url" placeholder="" required>
-          </div>
-          <div class="form-group">
-             <label for="phone">Fecha de incio:</label>
+             <label for="phone">Fecha:</label>
              <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="--/--/----" required>
           </div>
           <div class="form-group">
-             <label for="phone">Fecha final:</label>
-             <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="--/--/----" required>
-          </div>
+            <label for="phone">Url Imagen:</label>
+            <input type="text" ngModel="{{editProyectos?.urlImagen}}" name="urlImagen" class="form-control" id="urlImagen" placeholder="--/--/--">
+         </div>         
           <div class="form-group">
              <label for="phone">Descripción:</label>
              <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
           </div>
           <div class="form-group">
-            <label for="phone">Foto:</label>
-            <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
+            <label for="phone">Url Sito:</label>
+            <input type="text" ngModel="{{editProyectos?.urlSitio}}" name="urlSitio" class="form-control" id="urlSitio" placeholder="">
          </div>
           <div class="modal-footer">
              <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Agregar</button>
+             <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Guardar Cambios</button>
           </div>
           </form>
        </div>
@@ -111,7 +106,7 @@
           <div class="modal-dialog" role="document">
              <div class="modal-content">
                 <div class="modal-header">
-                   <h5 class="modal-title" id="updateProyectosModalLabel">Edit Proyectos {{editProyectos?.nombreProyecto}}</h5>
+                   <h5 class="modal-title" id="updateProyectosModalLabel">Editar Proyecto {{editProyectos?.nombreProyecto}}</h5>
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                    </button>
@@ -119,21 +114,17 @@
                 <div class="modal-body">
                    <form #editForm="ngForm">
                       <div class="form-group">
-                         <label for="name">Nombre de proyecto:</label>
+                         <label for="name">Nombre del proyecto:</label>
                          <input type="text" ngModel="{{editProyectos?.nombreProyecto}}" name="nombreProyecto" class="form-control" id="nombreProyecto" aria-describedby="emailHelp" placeholder="" required>
                       </div>
                       <input type="hidden" ngModel="{{editProyectos?.id}}" name="id" class="form-control" id="id" placeholder="id">
                       <input type="hidden" ngModel="{{editProyectos?.nombreProyecto}}" name="nombreProyecto" class="form-control" id="nombreProyecto" placeholder="">
                       <div class="form-group">
-                        <label for="email">Nombre de proyecto:</label>
-                        <input type="email" ngModel="{{editProyectos?.nombreProyecto}" name="nombreProyecto" class="form-control" id="nombreProyecto" placeholder="">
-                     </div>
-                      <div class="form-group">
                          <label for="email">Fecha:</label>
                          <input type="email" ngModel="{{editProyectos?.fecha}}" name="fecha" class="form-control" id="fecha" placeholder="--/--/--">
                       </div>
                       <div class="form-group">
-                         <label for="phone">Imagen:</label>
+                         <label for="phone">Url Imagen:</label>
                          <input type="text" ngModel="{{editProyectos?.urlImagen}}" name="urlImagen" class="form-control" id="urlImagen" placeholder="--/--/--">
                       </div>                      
                       <div class="form-group">

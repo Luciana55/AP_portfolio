@@ -1,5 +1,6 @@
 <!-- nuevos circle progress -->
-<div class="container" id="main-container">
+<div id="4">
+   <div class="container" id="main-container">
    <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
    <h5 class="resume-experience-title">Hard & Soft Skills:</h5>
    <br>
@@ -29,6 +30,7 @@
        </div>       
   </div>
   </div>
+</div>
 
    <!-- Add Modal -->
 <div class="modal fade" id="addSkillsModal" tabindex="-1" role="dialog" aria-labelledby="addSkillsModalLabel" aria-hidden="true">
@@ -44,17 +46,17 @@
           <form #addForm="ngForm" (ngSubmit)="onAddSkills(addForm)">
           <div class="form-group">
              <label for="name">Skill:</label>
-             <input type="text" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" aria-describedby="emailHelp" placeholder="" required>
+             <input type="text" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" aria-describedby="emailHelp" required>
             </div>
-            <input type="hidden" ngModel="{{editSkills?.id}}" name="id" class="form-control" id="id" placeholder="id">
-            <input type="hidden" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" placeholder="">
+            <input type="hidden" ngModel="{{editSkills?.id}}" name="id" class="form-control" id="id">
+            <input type="hidden" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill">
             <div class="form-group">
               <label for="email">Porcentaje:</label>
-              <input type="email" ngModel="{{editSkills?.porcentaje}}" name="porcentaje" class="form-control" id="porcentaje" placeholder="">
+              <input type="email" ngModel="{{editSkills?.porcentaje}}" name="porcentaje" class="form-control" id="porcentaje">
            </div>
             <div class="form-group">
                <label for="email">Url de imagen:</label>
-               <input type="email" ngModel="{{editSkills?.url}}" name="url" class="form-control" id="url" placeholder="">
+               <input type="email" ngModel="{{editSkills?.url}}" name="url" class="form-control" id="url">
             </div>      
           <div class="modal-footer">
              <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -80,17 +82,17 @@
                    <form #editForm="ngForm">
                       <div class="form-group">
                          <label for="name">Skill:</label>
-                         <input type="text" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" aria-describedby="emailHelp" placeholder="" required>
+                         <input type="text" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" aria-describedby="emailHelp" required>
                       </div>
                       <input type="hidden" ngModel="{{editSkills?.id}}" name="id" class="form-control" id="id" placeholder="id">
-                      <input type="hidden" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill" placeholder="">
+                      <input type="hidden" ngModel="{{editSkills?.skill}}" name="skill" class="form-control" id="skill">
                       <div class="form-group">
                         <label for="email">Porcentaje:</label>
-                        <input type="email" ngModel="{{editSkills?.porcentaje}}" name="porcentaje" class="form-control" id="porcentaje" placeholder="">
+                        <input type="email" ngModel="{{editSkills?.porcentaje}}" name="porcentaje" class="form-control" id="porcentaje">
                      </div>
                       <div class="form-group">
                          <label for="email">Url de imagen:</label>
-                         <input type="email" ngModel="{{editSkills?.url}}" name="url" class="form-control" id="url" placeholder="">
+                         <input type="email" ngModel="{{editSkills?.url}}" name="url" class="form-control" id="url">
                       </div>                           
 
                       <div class="modal-footer">

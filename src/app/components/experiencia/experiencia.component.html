@@ -1,3 +1,4 @@
+<article id="3">
 <div class="container" id="main-container">
     <div class="box">
         <div class="timeline-box mt-4">
@@ -31,6 +32,7 @@
       </div>
     </div>
 </div>
+</article>
 
 
 <!-- Add Modal -->
@@ -47,11 +49,11 @@
           <form #addForm="ngForm" (ngSubmit)="onAddExperiencia(addForm)">
           <div class="form-group">
              <label for="name">Posición:</label>
-             <input type="text" ngModel name="name" class="form-control" id="name" placeholder="" required>
+             <input type="text" ngModel name="name" class="form-control" id="name" required>
           </div>
           <div class="form-group">
              <label for="email">Nombre de empresa:</label>
-             <input type="email" ngModel name="email" class="form-control" id="email" placeholder="" required>
+             <input type="email" ngModel name="email" class="form-control" id="email" required>
           </div>
           <div class="form-group">
              <label for="phone">Fecha de incio:</label>
@@ -63,7 +65,7 @@
           </div>
           <div class="form-group">
              <label for="phone">Descripción:</label>
-             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl" placeholder="" required>
+             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl"  required>
           </div>
           <div class="modal-footer">
              <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -80,7 +82,7 @@
           <div class="modal-dialog" role="document">
              <div class="modal-content">
                 <div class="modal-header">
-                   <h5 class="modal-title" id="updateExperienciaModalLabel">Edit Experiencia {{editExperiencia?.posicion}}</h5>
+                   <h5 class="modal-title" id="updateExperienciaModalLabel">Editar Experiencia {{editExperiencia?.posicion}}</h5>
                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                    </button>
@@ -89,13 +91,13 @@
                    <form #editForm="ngForm">
                       <div class="form-group">
                          <label for="name">Posición:</label>
-                         <input type="text" ngModel="{{editExperiencia?.posicion}}" name="posicion" class="form-control" id="posicion" aria-describedby="emailHelp" placeholder="" required>
+                         <input type="text" ngModel="{{editExperiencia?.posicion}}" name="posicion" class="form-control" id="posicion" aria-describedby="emailHelp"  required>
                       </div>
                       <input type="hidden" ngModel="{{editExperiencia?.id}}" name="id" class="form-control" id="id" placeholder="id">
-                      <input type="hidden" ngModel="{{editExperiencia?.nombreEmpresa}}" name="nombreEmpresa" class="form-control" id="nombreEmpresa" placeholder="">
+                      <input type="hidden" ngModel="{{editExperiencia?.nombreEmpresa}}" name="nombreEmpresa" class="form-control" id="nombreEmpresa" >
                       <div class="form-group">
                         <label for="email">Nombre de empresa:</label>
-                        <input type="email" ngModel="{{editExperiencia?.nombreEmpresa}}" name="nombreEmpresa" class="form-control" id="nombreEmpresa" placeholder="">
+                        <input type="email" ngModel="{{editExperiencia?.nombreEmpresa}}" name="nombreEmpresa" class="form-control" id="nombreEmpresa" >
                      </div>
                       <div class="form-group">
                          <label for="email">Fecha de inicio:</label>
@@ -107,7 +109,7 @@
                       </div>                      
                       <div class="form-group">
                          <label for="phone">Descripción:</label>
-                         <input type="text" ngModel="{{editExperiencia?.descripcion}}" name="descripcion" class="form-control" id="descripcion" placeholder="">
+                         <input type="text" ngModel="{{editExperiencia?.descripcion}}" name="descripcion" class="form-control" id="descripcion" >
                       </div>
                       <div class="modal-footer">
                          <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
