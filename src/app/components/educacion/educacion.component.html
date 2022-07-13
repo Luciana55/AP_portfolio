@@ -1,5 +1,5 @@
-<article id="2">
-<div class="container" id="main-container">
+<div id="2">
+<div class="container margen" id="main-container">
    <div class="box">
        <div class="timeline-box mt-4">
          <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button>
@@ -16,9 +16,11 @@
              <div class="dashboard-timeline-info">
                <span class="jobster-timeline-time">{{educacion.fechaInicio}} to {{educacion.fechaFin}}</span>
                <h6 class="mb-2">{{educacion.titulo}}</h6>
+               <div>
                <span>- {{educacion.nombreInstituto}}</span>
-               <div class="img">
-               <img src="{{educacion.url_foto}}" alt="Foto del proyecto">
+               </div>
+               <div class="img rounded float-left img-fluid">
+               <img src="{{educacion.url_foto}}" alt="Foto de la institución educativa">
                </div>
              </div>
              <div class="float-right btn-group btn-group-sm">
@@ -34,7 +36,7 @@
      </div>
    </div>
 </div>
-</article>
+</div>
 
         <!-- Add Modal -->
         <div class="modal fade" id="addEducacionModal" tabindex="-1"  data-keyboard="false" data-backdrop="static" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
@@ -49,7 +51,7 @@
        <div class="modal-body">
           <form #addForm="ngForm" (ngSubmit)="onAddEducacion(addForm)">
             <div class="form-group">
-               <label for="name">Nombre:</label>
+               <label for="name">Instituto:</label>
                <input type="text" ngModel name="name" class="form-control" id="name" required>
             </div>
             <div class="form-group">
@@ -92,7 +94,7 @@
                 <div class="modal-body">
                    <form #editForm="ngForm">
                       <div class="form-group">
-                         <label for="name">Nombre:</label>
+                         <label for="name">Instituto:</label>
                          <input type="text" ngModel="{{editEducacion?.nombreInstituto}}" name="nombreInstituto" class="form-control" id="nombreInstituto" aria-describedby="emailHelp" placeholder="Name">
                       </div>
                       <input type="hidden" ngModel="{{editEducacion?.id}}" name="id" class="form-control" id="id" placeholder="id">
@@ -153,4 +155,3 @@
         </div>
         </div>
 
-     

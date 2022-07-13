@@ -153,7 +153,7 @@ body{
   -ms-transform: skew(0deg, 10deg);
   transform: skew(0deg, 10deg);
   color: #fff;
-  font-size: 13px
+  font-size: 15px
 }
 
 .profile-card .card-footer {
@@ -175,17 +175,17 @@ body{
 }
 
 .bg-primary {
-  background-color: #29c7ca !important;
+  background-color: #29cabd !important;
   color: #fff !important
 }
 
 .bg-success {
-  background-color: #1dbc9c !important;
+  background-color: #29cabd  !important;
   color: #fff !important
 }
 
 .bg-info {
-  background-color: #34b5dc !important;
+  background-color: #29cabd  !important;
   color: #fff !important
 }
 
@@ -195,7 +195,7 @@ body{
 }
 
 .bg-danger {
-  background-color: #cd4237 !important;
+  background-color: #990a00 !important;
   color: #fff !important
 }
 
@@ -235,4 +235,27 @@ a {
 
 .mar-t {
   margin-top: 20px;
+}
+
+.margen {
+  margin-top: 40px;
+} 
+
+.mar-b {
+  margin-bottom: 40px;
+}
+/* copyright */
+
+.deneb_footer .copyright_area {
+  background: #edecf0;
+  padding: 10px 0;
+}
+.deneb_footer .copyright_area .copyright_text {
+  text-align: center;
+}
+.deneb_footer .copyright_area .copyright_text p {
+  color: #011a3e;
+}
+.deneb_footer .copyright_area .copyright_text p span {
+  color: #feb000;
 }

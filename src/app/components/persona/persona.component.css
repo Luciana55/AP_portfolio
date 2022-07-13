@@ -1,27 +1,5 @@
+/*  */
 
-
-/* otrooo ejemploooo */
-
-.follower-wrapper li {
-    list-style-type: none;
-    color: #fff;
-    display: inline-block;
-   
-    margin-right: 20px;
-}
-
-.social-profile {
-    color: #fff;
-}
-
-.social-profile a {
-    color: #fff;
-}
-
-.social-profile {
-    position: relative;
-    margin-bottom: 150px;
-}
 
 .social-profile .user-profile {
     position: absolute;
@@ -33,16 +11,16 @@
 }
 
 .social-prof {
-    color: rgb(151, 15, 15);
-    text-align: left;
+    color: rgb(65, 65, 65);
+    text-align: center;
 }
 
 .social-prof .wrapper {
     width: 70%;
-    margin: auto;
     margin-top: -120px;
-    margin-bottom: 50px;
-    margin-left: 40px;
+    margin-bottom: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .social-prof img {
@@ -51,19 +29,21 @@
     border-radius: 50%;
     margin-bottom: 20px;
     border: 5px solid #fff;
+    object-fit: cover;
     
 }
 
 .social-prof h3 {
     font-size: auto;
     font-weight: 500;
-    margin-bottom: 100px;
-    color: rgb(36, 54, 155);
+    margin-bottom: 20px;
+    color: rgb(71, 71, 71);
 }
 
 .social-prof p {
-    font-size: 18px;
-    color:rgb(162, 0, 255);
+    font-size: 15px;
+    color:rgb(143, 143, 143);
+    
 }
 
 .social-prof .nav-tabs {
