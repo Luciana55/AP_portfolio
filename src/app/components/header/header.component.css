@@ -8,13 +8,14 @@ body {
 ul{
     list-style-type:none;
     display:flex;
-    text-align:center;
+    text-align:justify;
 }
 
 
 ul li{
     display:inline-block;
-    margin-left: 15px;       
+    margin-left: 15px;
+    margin-right: 2px;       
     position: center;
 }
 
@@ -22,7 +23,6 @@ ul li{
     margin-right: 10px;
     margin-left: 10px;
     text-align: center;
-
 }
 
 

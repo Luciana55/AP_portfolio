@@ -49,11 +49,11 @@
           <form #addForm="ngForm" (ngSubmit)="onAddExperiencia(addForm)">
           <div class="form-group">
              <label for="name">Posición:</label>
-             <input type="text" ngModel name="name" class="form-control" id="name" required>
+             <input type="text" ngModel="{{editExperiencia?.posicion}}" name="posicion" class="form-control" id="posicion" required>
           </div>
           <div class="form-group">
              <label for="email">Nombre de empresa:</label>
-             <input type="email" ngModel name="email" class="form-control" id="email" required>
+             <input type="email" ngModel="{{editExperiencia?.nombreEmpresa}}" name="nombreEmpresa" class="form-control" id="nombreEmpresa" required>
           </div>
           <div class="form-group">
              <label for="phone">Fecha de incio:</label>

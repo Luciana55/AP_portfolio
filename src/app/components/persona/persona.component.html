@@ -4,7 +4,7 @@
         <div class="card social-prof">
             <div class="card-body">
                 <div class="wrapper mx-auto">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/images-angular-1965b.appspot.com/o/ArgProg.jpg?alt=media&token=385d6011-23ae-4b83-8ed8-155debdf6b49" alt="Foto de perfil" class="user-profile">
+                    <img src="{{persona.urlImagen}}" alt="Foto de perfil" class="user-profile">
                     <h2>{{persona.nombre}} {{persona.apellido}}</h2>
                     <p>{{persona.ocupacion}}</p>
                     <p><i class="fa fa-map-marker"></i> {{persona.ubicacion}}</p>
@@ -38,7 +38,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
          <div class="modal-header">
-            <h5 class="modal-title" id="addSkillsModalLabel">Agregar nueva Persona:</h5>
+            <h5 class="modal-title" id="addPersonaModalLabel">Agregar nuevo Usuario:</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
@@ -50,15 +50,31 @@
                <input type="text" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" required>
               </div>
               <input type="hidden" ngModel="{{editPersona?.id}}" name="id" class="form-control" id="id">
-              <input type="hidden" ngModel="{{editPersona?.nombre}}" name="skill" class="form-control" id="skill">
+              <input type="hidden" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre">
               <div class="form-group">
-                <label for="email">Ubicación:</label>
-                <input type="email" ngModel="{{editPersona?.ubicacion}" name="ubicacion" class="form-control" id="ubicacion">
-             </div>
+               <label for="email">Apellido:</label>
+               <input type="email" ngModel="{{editPersona?.apellido}}" name="apellido" class="form-control" id="apellido">
+            </div>
+            <div class="form-group">
+               <label for="email">Url de Foto de Perfil:</label>
+               <input type="email" ngModel="{{editPersona?.urlImagen}}" name="foto" class="form-control" id="urlImagen">
+            </div>     
               <div class="form-group">
-                 <label for="email">Email:</label>
-                 <input type="email" ngModel="{{editPersona?.email}}" name="url" class="form-control" id="email">
-              </div>      
+                 <label for="email">Ubicación:</label>
+                 <input type="email" ngModel="{{editPersona?.ubicacion}}" name="ubicacion" class="form-control" id="email">
+              </div>
+            <div class="form-group">
+               <label for="email">Ocupación:</label>
+               <input type="email" ngModel="{{editPersona?.ocupacion}}" name="ocupacion" class="form-control" id="ocupacion">
+            </div>
+            <div class="form-group">
+               <label for="email">Email:</label>
+               <input type="email" ngModel="{{editPersona?.email}}" name="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+               <label for="email">Sobre mí:</label>
+               <input type="email" ngModel="{{editPersona?.sobremi}}" name="sobremi" class="form-control" id="sobremi">
+            </div>                  
             <div class="modal-footer">
                <button type="button" id="add-persona-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >Guardar Cambios</button>
@@ -70,11 +86,11 @@
            </div>
   
           <!-- Edit Modal -->
-          <div class="modal fade" id="updateSkillsModal" tabindex="-1" role="dialog" aria-labelledby="SkillsEditModalLabel" aria-hidden="true">
+          <div class="modal fade" id="updatePersonaModal" tabindex="-1" role="dialog" aria-labelledby="PersonaEditModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                <div class="modal-content">
                   <div class="modal-header">
-                     <h5 class="modal-title" id="updateSkillsModalLabel">Editar Persona {{editPersona?.nombre}}</h5>
+                     <h5 class="modal-title" id="updatePersonaModalLabel">Editar Persona {{editPersona?.nombre}}</h5>
                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                      <span aria-hidden="true">&times;</span>
                      </button>
@@ -82,23 +98,38 @@
                   <div class="modal-body">
                      <form #editForm="ngForm">
                         <div class="form-group">
-                           <label for="name">Skill:</label>
+                           <label for="name">Nombre:</label>
                            <input type="text" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre" aria-describedby="emailHelp" required>
+                          </div>
+                          <input type="hidden" ngModel="{{editPersona?.id}}" name="id" class="form-control" id="id">
+                          <input type="hidden" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre">
+                          <div class="form-group">
+                           <label for="email">Apellido:</label>
+                           <input type="email" ngModel="{{editPersona?.apellido}}" name="apellido" class="form-control" id="apellido">
                         </div>
-                        <input type="hidden" ngModel="{{editPersona?.id}}" name="id" class="form-control" id="id" placeholder="id">
-                        <input type="hidden" ngModel="{{editPersona?.nombre}}" name="nombre" class="form-control" id="nombre">
                         <div class="form-group">
-                          <label for="email">Ubicacion:</label>
-                          <input type="email" ngModel="{{editPersona?.ubicacion}}" name="porcentaje" class="form-control" id="porcentaje">
-                       </div>
+                           <label for="email">Url de Foto de Perfil:</label>
+                           <input type="email" ngModel="{{editPersona?.urlImagen}}" name="foto" class="form-control" id="urlImagen">
+                        </div>     
+                          <div class="form-group">
+                             <label for="email">Ubicación:</label>
+                             <input type="email" ngModel="{{editPersona?.ubicacion}}" name="ubicacion" class="form-control" id="ubicacion">
+                          </div>
+                        <div class="form-group">
+                           <label for="email">Ocupación:</label>
+                           <input type="email" ngModel="{{editPersona?.ocupacion}}" name="ocupacion" class="form-control" id="ocupacion">
+                        </div>
                         <div class="form-group">
                            <label for="email">Email:</label>
                            <input type="email" ngModel="{{editPersona?.email}}" name="email" class="form-control" id="email">
-                        </div>                           
-  
+                        </div>
+                        <div class="form-group">
+                           <label for="email">Sobre mí:</label>
+                           <input type="email" ngModel="{{editPersona?.sobremi}}" name="sobremi" class="form-control" id="sobremi">
+                        </div>                  
                         <div class="modal-footer">
-                           <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Cerrar</button>
-                           <button (click)="onUpdatePersona(editForm.value)" data-dismiss="modal" class="btn btn-primary" >Guardar Cambios</button>
+                           <button type="button" id="add-persona-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                           <button (click)="onUpdatePersona(editForm.value)" type="submit" class="btn btn-primary" >Guardar Cambios</button>
                         </div>
                      </form>
                   </div>
@@ -106,5 +137,35 @@
             </div>
           </div>
           
-         
+          <!-- Delete Modal -->
+        <div class="modal fade" id="deletePersonaModal" tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="deleteModelLabel">Eliminar Usuario:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <p>Seguro que quiere eliminar: {{deletePersona?.nombre}}?</p>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                     <button (click)="onDeletePersona(deletePersona?.id)" class="btn btn-danger" data-dismiss="modal">Sí</button>
+                  </div>
+               </div> 
+            </div>
+         </div>
+       </div>
+       
+       
+       <!-- Notificación si no hay estudios -->
+       <div *ngIf="persona?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+       <div class="alert alert-info" role="alert">
+         <h4 class="alert-heading">Error!</h4>
+         <p>No se encontraron usuarios.</p>
+       </div>
+       </div>
+
+
         
