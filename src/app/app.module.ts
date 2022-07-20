@@ -20,6 +20,7 @@ import { HeaderService } from './service/header.service';
 import { ProyectosService } from './service/proyectos.service';
 import { SkillsService } from './service/skills.service';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

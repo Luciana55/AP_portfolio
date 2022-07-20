@@ -4,7 +4,7 @@
         <div class="card social-prof">
             <div class="card-body">
                 <div class="wrapper mx-auto">
-                    <img src="{{persona.urlImagen}}" alt="Foto de perfil" class="user-profile">
+                    <img src="{{persona.url_img}}" alt="Foto de perfil" class="user-profile">
                     <h2>{{persona.nombre}} {{persona.apellido}}</h2>
                     <p>{{persona.ocupacion}}</p>
                     <p><i class="fa fa-map-marker"></i> {{persona.ubicacion}}</p>
@@ -57,7 +57,7 @@
             </div>
             <div class="form-group">
                <label for="email">Url de Foto de Perfil:</label>
-               <input type="email" ngModel="{{editPersona?.urlImagen}}" name="foto" class="form-control" id="urlImagen">
+               <input type="email" ngModel="{{editPersona?.url_img}}" name="url_img" class="form-control" id="url_img">
             </div>     
               <div class="form-group">
                  <label for="email">Ubicación:</label>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="form-group">
                            <label for="email">Url de Foto de Perfil:</label>
-                           <input type="email" ngModel="{{editPersona?.urlImagen}}" name="foto" class="form-control" id="urlImagen">
+                           <input type="email" ngModel="{{editPersona?.url_img}}" name="url_img" class="form-control" id="url_img">
                         </div>     
                           <div class="form-group">
                              <label for="email">Ubicación:</label>

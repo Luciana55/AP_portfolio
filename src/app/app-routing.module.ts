@@ -6,11 +6,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { PersonaComponent } from './components/persona/persona.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
 {path: '', component: HomeComponent},
 {path: 'header', component: HeaderComponent},
+{path: 'login', component: LoginComponent},
 {path: 'persona', component: PersonaComponent},
 {path: 'skills', component: SkillsComponent},
 {path: 'proyectos', component: ProyectosComponent},

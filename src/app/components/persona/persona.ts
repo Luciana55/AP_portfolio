@@ -8,6 +8,6 @@ export interface Persona {
     email: string;
     ubicacion: string;
     sobremi: string;
-    urlImagen: string;
+    url_img: string;
 
 } 

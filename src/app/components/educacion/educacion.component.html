@@ -52,23 +52,23 @@
           <form #addForm="ngForm" (ngSubmit)="onAddEducacion(addForm)">
             <div class="form-group">
                <label for="name">Instituto:</label>
-               <input type="text" ngModel name="name" class="form-control" id="name" required>
+               <input type="text" ngModel="{{editEducacion?.nombreInstituto}}" name="nombreInstituto" class="form-control" id="nombreInstituto" required>
             </div>
             <div class="form-group">
                <label for="email">Título:</label>
-               <input type="email" ngModel name="email" class="form-control" id="email" required>
+               <input type="email" ngModel="{{editEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" required>
             </div>
             <div class="form-group">
                <label for="phone">Fecha de incio:</label>
-               <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="--/--/----" required>
+               <input type="text" ngModel="{{editEducacion?.fechaInicio}}" name="fechaInicio" class="form-control" id="fechaInicio" placeholder="--/--/----" required>
             </div>
             <div class="form-group">
                <label for="phone">Fecha final:</label>
-               <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="--/--/----" required>
+               <input type="text" ngModel="{{editEducacion?.fechaFin}}" name="fechaFin" class="form-control" id="fechaFin" placeholder="--/--/----" required>
             </div>
             <div class="form-group">
                <label for="phone">Url Imagen:</label>
-               <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl"  required>
+               <input type="text" ngModel="{{editEducacion?.url_foto}}" name="url_foto" class="form-control" id="url_foto"  required>
             </div>
             <div class="modal-footer">
                <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

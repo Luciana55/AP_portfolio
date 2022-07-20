@@ -57,15 +57,15 @@
           </div>
           <div class="form-group">
              <label for="phone">Fecha de incio:</label>
-             <input type="text" ngModel name="jobTitle" class="form-control" id="jobTile" placeholder="--/--/----" required>
+             <input type="text" ngModel="{{editExperiencia?.fechaInicio}}" name="fechaInicio" class="form-control" id="fechaInicio" placeholder="--/--/----" required>
           </div>
           <div class="form-group">
              <label for="phone">Fecha final:</label>
-             <input type="text" ngModel name="phone" class="form-control" id="phone" placeholder="--/--/----" required>
+             <input type="text" ngModel="{{editExperiencia?.fechaFin}}" name="fechaFin" class="form-control" id="fechaFin" placeholder="--/--/----" required>
           </div>
           <div class="form-group">
              <label for="phone">Descripción:</label>
-             <input type="text" ngModel name="imageUrl" class="form-control" id="imageUrl"  required>
+             <input type="text" ngModel="{{editExperiencia?.descripcion}}" name="descripcion" class="form-control" id="descripcion"  required>
           </div>
           <div class="modal-footer">
              <button type="button" id="add-experiencia-form" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
