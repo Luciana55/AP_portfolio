@@ -14,3 +14,7 @@
 .margin {
     margin-top: 400px;
 }
+
+.sc {
+    overflow-x: hidden !important;
+}
