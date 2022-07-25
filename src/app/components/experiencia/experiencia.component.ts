@@ -1,7 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { TokenService } from 'src/app/service/token.service';
 import { Experiencia } from './experiencia';
 
 @Component({
@@ -15,11 +18,18 @@ export class ExperienciaComponent implements OnInit {
   public deleteExperiencia: Experiencia | undefined;
   
   roles: string[] = [];
-  isAdmin: boolean = false;
+  isLogged = false;
+  isLogginFail = false;
 
-  constructor(private experienciaService : ExperienciaService) { }
+  constructor(private experienciaService : ExperienciaService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
     this.getExperiencia();
   }
 
@@ -93,6 +103,10 @@ export class ExperienciaComponent implements OnInit {
     button.click();
   }
 
+  onLogOut():void{
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 
 
 

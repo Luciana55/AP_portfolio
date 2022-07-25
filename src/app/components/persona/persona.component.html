@@ -1,6 +1,6 @@
   <!-- ----------------------------------------------------->
   <div class="container" id="main-container"  *ngFor="let persona of persona">
-  <div class="img" style="background-image: url(https://www.norte.com/img/2018/11/parque-nacional-talampaya.jpg);height: 400px;background-size: cover;"></div>
+  <div class="img mar-1" style="background-image: url(https://www.norte.com/img/2018/11/parque-nacional-talampaya.jpg);height: 400px;background-size: cover;"></div>
         <div class="card social-prof">
             <div class="card-body">
                 <div class="wrapper mx-auto">
@@ -17,10 +17,10 @@
         <div> 
         <div class="modals float-right">
         <div class="row">
-            <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
+            <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')" *ngIf="isLogged">Agregar <i class="fa fa-plus"></i></button> 
             <div class="a1" >
-                    <a  (click)="onOpenModal(persona, 'edit')" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                    <a  (click)="onOpenModal(persona, 'delete')"class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                    <a  (click)="onOpenModal(persona, 'edit')" *ngIf="isLogged" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                    <a  (click)="onOpenModal(persona, 'delete')" *ngIf="isLogged" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
             </div>
         </div>
         </div>

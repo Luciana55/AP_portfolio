@@ -1,6 +1,6 @@
 <div id="5">
 <div class="container margen" id="main-container">
-<button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
+<button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')" *ngIf="isLogged">Agregar <i class="fa fa-plus"></i></button> 
 <h5 class="resume-experience-title">Proyectos:</h5>
 <br>
 <div class="row" >  
@@ -39,8 +39,8 @@
                 </div>
             </div>
             <div class="float-right btn-group btn-group-sm mar-b" >
-                <a (click)="onOpenModal(proyectos, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                <a (click)="onOpenModal(proyectos, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                <a (click)="onOpenModal(proyectos, 'edit')" *ngIf="isLogged" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                <a (click)="onOpenModal(proyectos, 'delete')" *ngIf="isLogged" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
             </div>
         </div>
     </div>

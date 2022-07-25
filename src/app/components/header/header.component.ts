@@ -1,7 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PersonaService } from 'src/app/service/persona.service';
+import { TokenService } from 'src/app/service/token.service';
 import { Persona } from '../persona/persona';
 
 @Component({
@@ -15,11 +17,18 @@ export class HeaderComponent implements OnInit {
   public deletePersona: Persona | undefined;
   
   roles: string[] = [];
-  isAdmin: boolean = false;
+  isLogged = false;
+  isLogginFail = false;
 
-  constructor(private personaService : PersonaService) { }
+  constructor(private personaService : PersonaService, private router:Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged = false;
+    }
+    
     this.getPersona();  
   }
   public getPersona(): void {
@@ -94,7 +103,14 @@ export class HeaderComponent implements OnInit {
 
  /** LOGIN */
 
+onLogOut():void{
+  this.tokenService.logOut();
+  window.location.reload();
+}
 
+login(){
+  this.router.navigate(['/login'])
+}
 
 
  /** FIN LOGIN */

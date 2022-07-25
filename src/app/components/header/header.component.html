@@ -39,7 +39,8 @@
                         <a class="nav-link scroll-link" href="https://github.com/Luciana55" target="_blank"><i class="fab fa-github"></i></a>
                     </li>
                 </div>
-                <button type="button" class="btn btn-info margin">Login</button>
+                <button type="button" class="btn btn-info margin" (click)="login()" *ngIf="!isLogged">Login</button>
+                <button type="button" class="btn btn-info margin-2" (click)="onLogOut()" *ngIf="isLogged">LogOut</button>
                 </ul>
             </div>
 

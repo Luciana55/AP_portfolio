@@ -1,7 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
+import { TokenService } from 'src/app/service/token.service';
 import { Proyectos } from './proyectos';
 
 @Component({
@@ -15,11 +18,18 @@ export class ProyectosComponent implements OnInit {
   public deleteProyectos: Proyectos | undefined;
 
   roles: string[] = [];
-  isAdmin: boolean = false;
+  isLogged = false;
+  isLogginFail = false;
 
-  constructor(private proyectosService : ProyectosService) { }
+  constructor(private proyectosService : ProyectosService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
     this.getProyectos();
   }
   public getProyectos(): void {
@@ -92,7 +102,10 @@ export class ProyectosComponent implements OnInit {
     button.click();
   }
 
-
+  onLogOut():void{
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 
 
 }

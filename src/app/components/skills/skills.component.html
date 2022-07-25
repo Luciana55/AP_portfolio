@@ -1,7 +1,7 @@
 <!-- nuevos circle progress -->
 <div id="4">
    <div class="container" id="main-container">
-   <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button> 
+   <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')" *ngIf="isLogged">Agregar <i class="fa fa-plus"></i></button> 
    <h5 class="resume-experience-title">Hard & Soft Skills:</h5>
    <br>
     <div class="row">
@@ -24,8 +24,8 @@
             [animationDuration]="300"
          ></circle-progress>
          <div class="float-right btn-group btn-group-sm">
-            <a (click)="onOpenModal(skills, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil a"></i> </a>
-            <a (click)="onOpenModal(skills, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times a"></i></a>
+            <a (click)="onOpenModal(skills, 'edit')" *ngIf="isLogged" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil a"></i> </a>
+            <a (click)="onOpenModal(skills, 'delete')" *ngIf="isLogged" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times a"></i></a>
          </div>
        </div>       
   </div>
@@ -131,7 +131,7 @@
         <div *ngIf="skills?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
         <div class="alert alert-info" role="alert">
           <h4 class="alert-heading">Error!</h4>
-          <p>No se encontró ninguna experiencia de trabajo.</p>
+          <p>No se encontró ninguna Hard & Soft Skills.</p>
         </div>
         </div>
 

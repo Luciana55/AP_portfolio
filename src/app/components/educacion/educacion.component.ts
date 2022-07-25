@@ -1,8 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { TokenService } from 'src/app/service/token.service';
 import { Educacion } from './educacion';
+
 
 @Component({
   selector: 'app-educacion',
@@ -16,11 +20,18 @@ export class EducacionComponent implements OnInit {
   public deleteEducacion: Educacion | undefined;
 
   roles: string[] = [];
-  isAdmin: boolean = false;
+  isLogged = false;
+  isLogginFail = false;
 
-  constructor(private educacionService: EducacionService) { }
+  constructor(private educacionService: EducacionService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
+
     this.getEducacion();
     
   }
@@ -97,7 +108,10 @@ export class EducacionComponent implements OnInit {
     button.click();
   }
 
-
+  onLogOut():void{
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 
 
 }

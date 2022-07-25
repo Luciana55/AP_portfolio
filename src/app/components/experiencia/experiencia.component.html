@@ -2,7 +2,7 @@
 <div class="container" id="main-container">
     <div class="box">
         <div class="timeline-box mt-4">
-          <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button>
+          <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')" *ngIf="isLogged">Agregar <i class="fa fa-plus"></i></button>
           <h5 class="resume-experience-title">Experiencia de trabajo:</h5>
           <br>
         <div class="row">
@@ -20,8 +20,8 @@
                 <p class="mt-2">{{experiencia.descripcion}}</p>
               </div>
               <div class="float-right btn-group btn-group-sm">
-                <a (click)="onOpenModal(experiencia, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-                <a (click)="onOpenModal(experiencia, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+                <a (click)="onOpenModal(experiencia, 'edit')" *ngIf="isLogged" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+                <a (click)="onOpenModal(experiencia, 'delete')" *ngIf="isLogged" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
             </div>
             </div>
           </div>

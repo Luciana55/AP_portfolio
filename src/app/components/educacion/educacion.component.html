@@ -2,7 +2,7 @@
 <div class="container margen" id="main-container">
    <div class="box">
        <div class="timeline-box mt-4">
-         <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')">Agregar <i class="fa fa-plus"></i></button>
+         <button type="button" class="btn btn-outline-info float-right" (click)="onOpenModal(null, 'add')" *ngIf="isLogged">Agregar <i class="fa fa-plus"></i></button>
          <h5 class="resume-experience-title">Educación:</h5>
          <br>
        <div class="row">
@@ -24,8 +24,8 @@
                </div>
              </div>
              <div class="float-right btn-group btn-group-sm">
-               <a (click)="onOpenModal(educacion, 'edit')"class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
-               <a (click)="onOpenModal(educacion, 'delete')" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
+               <a (click)="onOpenModal(educacion, 'edit')" *ngIf="isLogged" class="btn btn-primary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Edit"><i class="fa fa-pencil"></i> </a>
+               <a (click)="onOpenModal(educacion, 'delete')" *ngIf="isLogged" class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Delete"><i class="fa fa-times"></i></a>
            </div>
            </div>
          </div>
