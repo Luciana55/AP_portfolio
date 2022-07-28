@@ -1,6 +1,16 @@
 # APPortfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+Versión Web: https://luciana-ap.web.app/
+
+FrontEnd en Firebase
+BackEnd en Heroku
+Base de Datos en Clever-cloud
+
+Solicitar usuario y contraseña para acceder a las opciones de edición de los datos en forma de modales.
+
+Este proyecto fue generado con [Angular CLI] version 13.2.5.
+
+Autora: Luciana Vidal
 
 ## Development server
 
