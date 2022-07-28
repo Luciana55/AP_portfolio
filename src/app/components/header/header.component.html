@@ -1,52 +1,61 @@
 <!-- navbar-->
 
 <header class="header fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-        <div class="container" *ngFor="let persona of persona">            
-            <a class="navbar-brand" href="#" >
-                <img src= "https://firebasestorage.googleapis.com/v0/b/images-angular-1965b.appspot.com/o/APLogo2.png?alt=media&token=0a381a63-d671-4df7-88e7-620e8e1ac1b0"
-                 height="70" alt="Argentina Programa">
-             </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container" *ngFor="let persona of persona">
+      <a class="navbar-brand" href="#">
+        <img src="https://firebasestorage.googleapis.com/v0/b/images-angular-1965b.appspot.com/o/APLogo2.png?alt=media&token=0a381a63-d671-4df7-88e7-620e8e1ac1b0"
+          height="70" alt="Argentina Programa">
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                <ul class="navbar-nav ml-auto" >
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#2">Educación</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#3">Experiencia</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#4">Skills</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#5">Proyectos</a>
-                      </li>
-                    <div>
-                    <li class="nav-item" >
-                        <a class="nav-link scroll-link" href="mailto:{{persona.email}}"><i class="fab fa-google"></i></a>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="https://www.linkedin.com/in/luciana-vidal-4103aa240/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="https://github.com/Luciana55" target="_blank"><i class="fab fa-github"></i></a>
-                    </li>
-                </div>
-                <button type="button" class="btn btn-info margin" (click)="login()" *ngIf="!isLogged">Login</button>
-                <button type="button" class="btn btn-info margin-2" (click)="onLogOut()" *ngIf="isLogged">LogOut</button>
-                </ul>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#2">Educación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#3">Experiencia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#4">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#5">Proyectos</a>
+          </li>
+          <div>
+            <li class="nav-item">
+              <a class="nav-link scroll-link" href="mailto:{{persona.email}}"><i
+                  class="fab fa-google"></i></a>
+              <li class="nav-item">
+                <a class="nav-link scroll-link"
+                  href="https://www.linkedin.com/in/luciana-vidal-4103aa240/"
+                  target="_blank"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scroll-link"
+                  href="https://github.com/Luciana55" target="_blank"><i
+                    class="fab fa-github"></i></a>
+              </li>
             </div>
-
+            <button type="button" class="btn btn-info margin" (click)="login()"
+              *ngIf="!isLogged">Login</button>
+            <button type="button" class="btn btn-info margin-2"
+              (click)="onLogOut()" *ngIf="isLogged">LogOut</button>
+          </ul>
         </div>
+
+      </div>
     </nav>
-</header>
+  </header>
 
   <!-- fin navbar-->
-

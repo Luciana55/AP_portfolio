@@ -23,7 +23,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider } from './service/interceptor-service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +33,7 @@ import { interceptorProvider } from './service/interceptor-service';
     SkillsComponent,
     ProyectosComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,12 +41,17 @@ import { interceptorProvider } from './service/interceptor-service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
   ],
-  providers: [PersonaService, EducacionService,
-  ExperienciaService, HeaderService, ProyectosService, SkillsService, interceptorProvider
- 
-],
-  bootstrap: [AppComponent]
+  providers: [
+    PersonaService,
+    EducacionService,
+    ExperienciaService,
+    HeaderService,
+    ProyectosService,
+    SkillsService,
+    interceptorProvider,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -5,13 +5,12 @@ import { environment } from 'src/environments/environment';
 import { Skills } from '../components/skills/skills';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SkillsService {
-
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getSkills(): Observable<Skills[]> {
     return this.http.get<Skills[]>(`${this.apiServerUrl}/skills/all`);
@@ -28,5 +27,4 @@ export class SkillsService {
   public deleteSkills(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/skills/delete/${id}`);
   }
-
 }

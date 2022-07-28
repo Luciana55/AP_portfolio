@@ -5,29 +5,34 @@ import { environment } from 'src/environments/environment';
 import { Experiencia } from '../components/experiencia/experiencia';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExperienciaService {
-
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getExperiencia(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(`${this.apiServerUrl}/experiencia/all`);
   }
 
   public addExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>(`${this.apiServerUrl}/experiencia/add`, experiencia);
+    return this.http.post<Experiencia>(
+      `${this.apiServerUrl}/experiencia/add`,
+      experiencia
+    );
   }
 
   public updateExperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.put<Experiencia>(`${this.apiServerUrl}/experiencia/update`, experiencia);
+    return this.http.put<Experiencia>(
+      `${this.apiServerUrl}/experiencia/update`,
+      experiencia
+    );
   }
 
   public deleteExperiencia(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/experiencia/delete/${id}`);
+    return this.http.delete<void>(
+      `${this.apiServerUrl}/experiencia/delete/${id}`
+    );
   }
-
-
 }

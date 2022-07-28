@@ -4,14 +4,13 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Persona } from '../components/persona/persona';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PersonaService {
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getPersona(): Observable<Persona[]> {
     return this.http.get<Persona[]>(`${this.apiServerUrl}/persona/all`);
@@ -22,11 +21,13 @@ export class PersonaService {
   }
 
   public updatePersona(persona: Persona): Observable<Persona> {
-    return this.http.put<Persona>(`${this.apiServerUrl}/persona/update`, persona);
+    return this.http.put<Persona>(
+      `${this.apiServerUrl}/persona/update`,
+      persona
+    );
   }
 
   public deletePersona(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/persona/delete/${id}`);
   }
-
 }

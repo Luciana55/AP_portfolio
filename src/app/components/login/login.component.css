@@ -1,33 +1,28 @@
 .mar-1 {
-    margin-top: 180px;
+  margin-top: 180px;
 }
 .fondo {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #007bff;
+  background: linear-gradient(to right, #0062e6, #33aeff);
 }
 
 .margin {
-   margin-right: 10px;
-   margin-left: 10px;
-   text-align: center;
-   display: inline-block;
-   position: center;
-       
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  display: inline-block;
+  position: center;
 }
 
-ul{
-    list-style-type:none;
-    display:flex;
-    text-align:justify;
+ul {
+  list-style-type: none;
+  display: flex;
+  text-align: justify;
 }
 
-
-ul li{
-    display:inline-block;
-    margin-left: 15px;
-    margin-right: 2px;       
-    position: center;
+ul li {
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 2px;
+  position: center;
 }
-
-
-

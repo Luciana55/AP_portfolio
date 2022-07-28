@@ -5,32 +5,34 @@ import { environment } from 'src/environments/environment';
 import { Educacion } from '../components/educacion/educacion';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EducacionService {
-
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getEducacion(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(`${this.apiServerUrl}/educacion/all`);
   }
 
   public addEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.post<Educacion>(`${this.apiServerUrl}/educacion/add`, educacion);
+    return this.http.post<Educacion>(
+      `${this.apiServerUrl}/educacion/add`,
+      educacion
+    );
   }
 
   public updateEducacion(educacion: Educacion): Observable<Educacion> {
-    return this.http.put<Educacion>(`${this.apiServerUrl}/educacion/update`, educacion);
+    return this.http.put<Educacion>(
+      `${this.apiServerUrl}/educacion/update`,
+      educacion
+    );
   }
 
   public deleteEducacion(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/educacion/delete/${id}`);
+    return this.http.delete<void>(
+      `${this.apiServerUrl}/educacion/delete/${id}`
+    );
   }
-
-
-
-
 }
-

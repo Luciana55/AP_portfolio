@@ -10,7 +10,7 @@ import { Proyectos } from './proyectos';
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
   public proyectos: Proyectos[] = [];
@@ -21,11 +21,15 @@ export class ProyectosComponent implements OnInit {
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private proyectosService : ProyectosService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private proyectosService: ProyectosService,
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
@@ -34,14 +38,15 @@ export class ProyectosComponent implements OnInit {
   }
   public getProyectos(): void {
     this.proyectosService.getProyectos().subscribe({
-    next: (response: Proyectos[]) => {
-      this.proyectos = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
-  }public onAddProyectos(addForm: NgForm): void {
+      next: (response: Proyectos[]) => {
+        this.proyectos = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public onAddProyectos(addForm: NgForm): void {
     document.getElementById('add-proyectos-modal')?.click();
     this.proyectosService.addProyectos(addForm.value).subscribe(
       (response: Proyectos) => {
@@ -79,9 +84,8 @@ export class ProyectosComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(proyectos: Proyectos, mode: string): void{
+  public onOpenModal(proyectos: Proyectos, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -102,10 +106,8 @@ export class ProyectosComponent implements OnInit {
     button.click();
   }
 
-  onLogOut():void{
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }
-
-
 }

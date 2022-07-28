@@ -10,22 +10,26 @@ import { Persona } from './persona';
 @Component({
   selector: 'app-persona',
   templateUrl: './persona.component.html',
-  styleUrls: ['./persona.component.css']
+  styleUrls: ['./persona.component.css'],
 })
 export class PersonaComponent implements OnInit {
   public persona: Persona[] = [];
   public editPersona: Persona | undefined;
   public deletePersona: Persona | undefined;
-  
+
   roles: string[] = [];
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private personaService : PersonaService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private personaService: PersonaService,
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
@@ -35,14 +39,15 @@ export class PersonaComponent implements OnInit {
 
   public getPersona(): void {
     this.personaService.getPersona().subscribe({
-    next: (response: Persona[]) => {
-      this.persona = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
-  }public onAddPersona(addForm: NgForm): void {
+      next: (response: Persona[]) => {
+        this.persona = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public onAddPersona(addForm: NgForm): void {
     document.getElementById('add-persona-modal')?.click();
     this.personaService.addPersona(addForm.value).subscribe(
       (response: Persona) => {
@@ -80,9 +85,8 @@ export class PersonaComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(persona: Persona, mode: string): void{
+  public onOpenModal(persona: Persona, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -103,12 +107,8 @@ export class PersonaComponent implements OnInit {
     button.click();
   }
 
-  onLogOut():void{
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }
-
-
-
-
 }

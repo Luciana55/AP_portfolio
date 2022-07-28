@@ -7,26 +7,29 @@ import { SkillsService } from 'src/app/service/skills.service';
 import { TokenService } from 'src/app/service/token.service';
 import { Skills } from './skills';
 
-
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.css']
+  styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
   public skills: Skills[] = [];
   public editSkills: Skills | undefined;
   public deleteSkills: Skills | undefined;
-  
+
   roles: string[] = [];
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private skillsService : SkillsService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private skillsService: SkillsService,
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
@@ -35,14 +38,15 @@ export class SkillsComponent implements OnInit {
   }
   public getSkills(): void {
     this.skillsService.getSkills().subscribe({
-    next: (response: Skills[]) => {
-      this.skills = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
-  }public onAddSkills(addForm: NgForm): void {
+      next: (response: Skills[]) => {
+        this.skills = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public onAddSkills(addForm: NgForm): void {
     document.getElementById('add-skills-modal')?.click();
     this.skillsService.addSkills(addForm.value).subscribe(
       (response: Skills) => {
@@ -80,9 +84,8 @@ export class SkillsComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(skills: Skills, mode: string): void{
+  public onOpenModal(skills: Skills, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -103,9 +106,8 @@ export class SkillsComponent implements OnInit {
     button.click();
   }
 
-  onLogOut():void{
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }
-
 }

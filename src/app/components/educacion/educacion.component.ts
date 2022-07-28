@@ -7,14 +7,12 @@ import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
 import { Educacion } from './educacion';
 
-
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
-  styleUrls: ['./educacion.component.css']
+  styleUrls: ['./educacion.component.css'],
 })
 export class EducacionComponent implements OnInit {
-
   public educacion: Educacion[] = [];
   public editEducacion: Educacion | undefined;
   public deleteEducacion: Educacion | undefined;
@@ -23,28 +21,32 @@ export class EducacionComponent implements OnInit {
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private educacionService: EducacionService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private educacionService: EducacionService,
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
     }
 
     this.getEducacion();
-    
   }
 
   public getEducacion(): void {
     this.educacionService.getEducacion().subscribe({
-    next: (response: Educacion[]) => {
-      this.educacion = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
+      next: (response: Educacion[]) => {
+        this.educacion = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
   }
 
   public onAddEducacion(addForm: NgForm): void {
@@ -85,9 +87,8 @@ export class EducacionComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(educacion: Educacion, mode: string): void{
+  public onOpenModal(educacion: Educacion, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -108,10 +109,8 @@ export class EducacionComponent implements OnInit {
     button.click();
   }
 
-  onLogOut():void{
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }
-
-
 }

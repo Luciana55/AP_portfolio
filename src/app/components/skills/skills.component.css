@@ -1,20 +1,20 @@
-.row{
-    padding-top: 10px;
-    padding-bottom: 30px;
+.row {
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 .mar {
-    margin-top: 40px;
-} 
+  margin-top: 40px;
+}
 
 .a {
-    color: #ffffff;
-} 
+  color: #ffffff;
+}
 
 .margin {
-    margin-top: 400px;
+  margin-top: 400px;
 }
 
 .sc {
-    overflow-x: hidden !important;
+  overflow-x: hidden !important;
 }

@@ -1,36 +1,34 @@
 /* nav bar */
 
 body {
-    background: #080a0b;
-    color: #fff;
+  background: #080a0b;
+  color: #fff;
 }
 
-ul{
-    list-style-type:none;
-    display:flex;
-    text-align:justify;
+ul {
+  list-style-type: none;
+  display: flex;
+  text-align: justify;
 }
 
-
-ul li{
-    display:inline-block;
-    margin-left: 15px;
-    margin-right: 2px;       
-    position: center;
+ul li {
+  display: inline-block;
+  margin-left: 15px;
+  margin-right: 2px;
+  position: center;
 }
 
 .margin {
-    margin-right: 10px;
-    margin-left: 10px;
-    text-align: center;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
 }
 
 .margin-2 {
-    margin-right: 5px;
-    margin-left: 5px;
-    text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-align: center;
 }
-
 
 /* fin navbar*/
 

@@ -9,38 +9,43 @@ import { Persona } from '../persona/persona';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   public persona: Persona[] = [];
   public editPersona: Persona | undefined;
   public deletePersona: Persona | undefined;
-  
+
   roles: string[] = [];
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private personaService : PersonaService, private router:Router, private tokenService: TokenService) { }
+  constructor(
+    private personaService: PersonaService,
+    private router: Router,
+    private tokenService: TokenService
+  ) {}
 
   ngOnInit(): void {
-    if(this.tokenService.getToken()){
-      this.isLogged=true;
-    }else{
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
       this.isLogged = false;
     }
-    
-    this.getPersona();  
+
+    this.getPersona();
   }
   public getPersona(): void {
     this.personaService.getPersona().subscribe({
-    next: (response: Persona[]) => {
-      this.persona = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
-  }public onAddPersona(addForm: NgForm): void {
+      next: (response: Persona[]) => {
+        this.persona = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public onAddPersona(addForm: NgForm): void {
     document.getElementById('add-persona-modal')?.click();
     this.personaService.addPersona(addForm.value).subscribe(
       (response: Persona) => {
@@ -78,9 +83,8 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(persona: Persona, mode: string): void{
+  public onOpenModal(persona: Persona, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -101,17 +105,16 @@ export class HeaderComponent implements OnInit {
     button.click();
   }
 
- /** LOGIN */
+  /** LOGIN */
 
-onLogOut():void{
-  this.tokenService.logOut();
-  window.location.reload();
-}
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 
-login(){
-  this.router.navigate(['/login'])
-}
+  login() {
+    this.router.navigate(['/login']);
+  }
 
-
- /** FIN LOGIN */
+  /** FIN LOGIN */
 }

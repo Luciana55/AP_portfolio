@@ -10,22 +10,26 @@ import { Experiencia } from './experiencia';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
-  styleUrls: ['./experiencia.component.css']
+  styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
   public experiencia: Experiencia[] = [];
   public editExperiencia: Experiencia | undefined;
   public deleteExperiencia: Experiencia | undefined;
-  
+
   roles: string[] = [];
   isLogged = false;
   isLogginFail = false;
 
-  constructor(private experienciaService : ExperienciaService, private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private experienciaService: ExperienciaService,
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLogginFail = false;
       this.roles = this.tokenService.getAuthorities();
@@ -33,16 +37,17 @@ export class ExperienciaComponent implements OnInit {
     this.getExperiencia();
   }
 
-   public getExperiencia(): void {
+  public getExperiencia(): void {
     this.experienciaService.getExperiencia().subscribe({
-    next: (response: Experiencia[]) => {
-      this.experiencia = response;
-    },
-    error:(error:HttpErrorResponse)=> {
-      alert(error.message);
-    }
-  })
-  }public onAddExperiencia(addForm: NgForm): void {
+      next: (response: Experiencia[]) => {
+        this.experiencia = response;
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      },
+    });
+  }
+  public onAddExperiencia(addForm: NgForm): void {
     document.getElementById('add-experiencia-modal')?.click();
     this.experienciaService.addExperiencia(addForm.value).subscribe(
       (response: Experiencia) => {
@@ -80,9 +85,8 @@ export class ExperienciaComponent implements OnInit {
       }
     );
   }
-  
 
-  public onOpenModal(experiencia: Experiencia, mode: string): void{
+  public onOpenModal(experiencia: Experiencia, mode: string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -103,11 +107,8 @@ export class ExperienciaComponent implements OnInit {
     button.click();
   }
 
-  onLogOut():void{
+  onLogOut(): void {
     this.tokenService.logOut();
     window.location.reload();
   }
-
-
-
 }

@@ -1,6 +1,6 @@
-body{
-  margin-top:20px;
-  background:#eee;
+body {
+  margin-top: 20px;
+  background: #eee;
 }
 .widget-container {
   -webkit-border-radius: 2px;
@@ -9,24 +9,24 @@ body{
   -moz-background-clip: padding;
   border-radius: 2px;
   background-clip: padding-box;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .07);
-  margin-bottom: 30px
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
 }
 
 .widget-container .widget {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
-.widget-container>.row {
+.widget-container > .row {
   margin-right: 0 !important;
-  margin-left: 0 !important
+  margin-left: 0 !important;
 }
 
-.widget-container>.row>[class*="col-"] {
+.widget-container > .row > [class*="col-"] {
   padding-left: 0 !important;
-  padding-right: 0 !important
+  padding-right: 0 !important;
 }
 
 .widget {
@@ -40,21 +40,21 @@ body{
   font-weight: 300;
   margin-bottom: 30px;
   position: relative;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 .widget .row {
   font-size: 0;
   margin-left: 0;
-  margin-right: 0
+  margin-right: 0;
 }
 
 .widget .row:before {
-  display: none
+  display: none;
 }
 
 .widget .row .col {
-  font-size: 11px
+  font-size: 11px;
 }
 
 .widget .row .col:first-child {
@@ -63,7 +63,7 @@ body{
   -moz-border-radius: 2px 0 0 2px;
   -moz-background-clip: padding;
   border-radius: 2px 0 0 2px;
-  background-clip: padding-box
+  background-clip: padding-box;
 }
 
 .widget .row .col:last-child {
@@ -72,67 +72,66 @@ body{
   -moz-border-radius: 0 2px 2px 0;
   -moz-background-clip: padding;
   border-radius: 0 2px 2px 0;
-  background-clip: padding-box
+  background-clip: padding-box;
 }
 
 .widget .col {
   display: inline-block;
-  vertical-align: top
+  vertical-align: top;
 }
 
-.widget [class*=col-] {
+.widget [class*="col-"] {
   font-size: 11px;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .widget .widget-stat {
-  position: absolute
+  position: absolute;
 }
 
 .widget .widget-stat.top {
-  top: 7px
+  top: 7px;
 }
 
 .widget .widget-stat.right {
-  right: 10px
+  right: 10px;
 }
 
 .widget .widget-stat.left {
-  left: 10px
+  left: 10px;
 }
 
 .widget .widget-stat.bottom {
-  bottom: 7px
+  bottom: 7px;
 }
 
 .widget .widget-stat strong,
 .widget .widget-stat span,
 .widget .widget-stat i,
 .widget .widget-stat div {
-  vertical-align: top
+  vertical-align: top;
 }
 
 .widget .progress {
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .profile-card .card-header .header-avatar {
-  text-align: center
+  text-align: center;
 }
 
 .profile-card .card-header .header-avatar img {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow: hidden
+  overflow: hidden;
 }
-
 
 .profile-card .card-header .header-name {
   font-size: 20px;
   font-weight: 400;
-  text-align: center
+  text-align: center;
 }
 
 .profile-card .card-body {
@@ -143,7 +142,7 @@ body{
   transform: skew(0deg, -10deg);
   margin-top: 30px;
   min-height: 100px;
-  padding: 50px 20px
+  padding: 50px 20px;
 }
 
 .profile-card .card-body .body-description {
@@ -153,83 +152,83 @@ body{
   -ms-transform: skew(0deg, 10deg);
   transform: skew(0deg, 10deg);
   color: #fff;
-  font-size: 15px
+  font-size: 15px;
 }
 
 .profile-card .card-footer {
   margin-top: 70px;
-  padding: 10px 0 20px
+  padding: 10px 0 20px;
 }
 
 .profile-card .card-footer .footer-social {
-  text-align: center
+  text-align: center;
 }
 
 .profile-card .card-footer .footer-social .row {
-  margin: 0
+  margin: 0;
 }
 
 .profile-card .card-footer .footer-social i {
   color: #292929;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .bg-primary {
   background-color: #29cabd !important;
-  color: #fff !important
+  color: #fff !important;
 }
 
 .bg-success {
-  background-color: #29cabd  !important;
-  color: #fff !important
+  background-color: #29cabd !important;
+  color: #fff !important;
 }
 
 .bg-info {
-  background-color: #29cabd  !important;
-  color: #fff !important
+  background-color: #29cabd !important;
+  color: #fff !important;
 }
 
 .bg-warning {
   background-color: #ffc107 !important;
-  color: #fff !important
+  color: #fff !important;
 }
 
 .bg-danger {
   background-color: #990a00 !important;
-  color: #fff !important
+  color: #fff !important;
 }
 
 .bg-inverse {
   background-color: #fefefe !important;
-  color: #292929 !important
+  color: #292929 !important;
 }
 
 .bg-white {
   background-color: #fff !important;
-  color: #292929 !important
+  color: #292929 !important;
 }
 
 .bg-transparent {
-  background-color: transparent !important
+  background-color: transparent !important;
 }
 
 .bg-body {
-  background-color: #f1f3f2 !important
+  background-color: #f1f3f2 !important;
 }
 
 .bg-highlight {
-  background-color: #ff8
+  background-color: #ff8;
 }
 
 .bg-default-darker {
-  background-color: #212121
+  background-color: #212121;
 }
 
 a {
   color: #ffffff;
 }
 
-.mar-r{
+.mar-r {
   margin-right: 10px;
 }
 
@@ -239,7 +238,7 @@ a {
 
 .margen {
   margin-top: 40px;
-} 
+}
 
 .mar-b {
   margin-bottom: 40px;
